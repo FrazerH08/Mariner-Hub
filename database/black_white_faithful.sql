@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 08, 2025 at 10:25 AM
+-- Generation Time: May 09, 2025 at 12:51 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -38,6 +38,13 @@ CREATE TABLE `feedback` (
   `date_written` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `feedback`
+--
+
+INSERT INTO `feedback` (`id`, `firstname`, `lastname`, `username`, `email`, `region`, `subject`, `date_written`) VALUES
+(0, 'Euan', 'Parry', 'Euan123', '123@gmail.com', 'United Kingdom', 'I hate this website', '2025-05-08 09:21:31');
+
 -- --------------------------------------------------------
 
 --
@@ -68,6 +75,15 @@ CREATE TABLE `news` (
   `time_created` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `comments` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `news`
+--
+
+INSERT INTO `news` (`id`, `title`, `description`, `picture`, `content`, `username`, `time_created`, `comments`) VALUES
+(1, 'What did Euan Do Yesterday', 'Hello ', '', 'vdsbgsghdrhfh', '', '2025-05-09 09:11:52', ''),
+(2, 'My first Post', 'hdcdc', '', 'fewsgfegeg', '', '2025-05-09 09:14:24', ''),
+(3, 'My first Post', 'hdcdc', 0x4172726179, 'fewsgfegeg', '', '2025-05-09 10:22:30', '');
 
 -- --------------------------------------------------------
 
@@ -158,7 +174,7 @@ ALTER TABLE `live_chat`
 -- AUTO_INCREMENT for table `news`
 --
 ALTER TABLE `news`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `users`
