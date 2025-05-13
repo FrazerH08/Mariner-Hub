@@ -6,7 +6,11 @@
     $SQL = "SELECT title, description, content, picture FROM news WHERE id = $id";
 
     $result= $conn->query($SQL);
-
+    $logged_in = $_SESSION['logged_in'];
+    $role = $_SESSION['role'];
+    if($role != 'admin' || $logged_in == false) {
+        header(header:"Location: list_news.php");
+    }
     $row = $result->fetch_assoc();
 
     if($result->num_rows == 0) {
@@ -14,7 +18,7 @@
     }else{
         $title = $row['title'];
         $description = $row['description'];
-        $post_txt = htmlentities($row['content']);
+        $content = htmlentities($row['content']);
         $picture = $row['picture'];
     }
 
@@ -26,8 +30,8 @@
         <br>
         <label for="description_txt">Description: </label><br>
         <textarea name="description" id="description_txt" cols="100" rows="10"><?php echo $description; ?></textarea><br>
-        <label for="post_txt">Content: </label><br>
-        <textarea name="post_txt" id="post_txt" cols="180" rows="26"><?php echo $post_txt; ?></textarea>
+        <label for="content">Content: </label><br>
+        <textarea name="content" id="content" cols="180" rows="26"><?php echo $content; ?></textarea>
         <br>
         <button type="submit" class="btn" onclick="alert('Thanks for submitting!')">Submit</button>
         <input type="file" id="pictureup"name="fileToUpload">

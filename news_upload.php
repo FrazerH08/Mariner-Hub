@@ -1,3 +1,15 @@
+<?php
+include 'connectdb.php';
+session_start();
+
+$logged_in = $_SESSION['logged_in'];
+$role = $_SESSION['role'];
+
+if($role != 'admin' || $logged_in == false) {
+    header(header:"Location: list_news.php");
+}
+
+?>
 <h1><u>Create News</u></h1>
     <div class="formcss">
     <form action="add_news_validate.php" method="post" enctype="multipart/form-data">
