@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 09, 2025 at 12:51 PM
+-- Generation Time: May 13, 2025 at 04:09 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -81,9 +81,8 @@ CREATE TABLE `news` (
 --
 
 INSERT INTO `news` (`id`, `title`, `description`, `picture`, `content`, `username`, `time_created`, `comments`) VALUES
-(1, 'What did Euan Do Yesterday', 'Hello ', '', 'vdsbgsghdrhfh', '', '2025-05-09 09:11:52', ''),
-(2, 'My first Post', 'hdcdc', '', 'fewsgfegeg', '', '2025-05-09 09:14:24', ''),
-(3, 'My first Post', 'hdcdc', 0x4172726179, 'fewsgfegeg', '', '2025-05-09 10:22:30', '');
+(1, 'Final Test', 'Hello This is frazzle', 0x75706c6f6164732f53637265656e73686f7420323032342d31312d3034203131343535342e706e67, 'please work!', '', '2025-05-13 10:09:48', ''),
+(14, 'Delete this', 'ffffdf', 0x53637265656e73686f7420323032342d31312d3035203131313132302e706e67, 'dfdfdfdfdf', '', '2025-05-13 12:12:05', '');
 
 -- --------------------------------------------------------
 
@@ -124,7 +123,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `firstname`, `lastname`, `region`, `status`, `birthdate`, `role`, `email`) VALUES
-(1, 'FrazerGTFC', '$2y$10$EwvAmv/0GzWsB86V5ffUTecwJp3ehOCYM8nCSIJenXjPcBDaOHfMO', 'Frazer', 'Harness', 'United Kingdom', 'active', '2008-06-07', 'user', 'frazergtfc9@outlook.com');
+(1, 'FrazerGTFC', '$2y$10$EwvAmv/0GzWsB86V5ffUTecwJp3ehOCYM8nCSIJenXjPcBDaOHfMO', 'Frazer', 'Harness', 'United Kingdom', 'active', '2008-06-07', 'admin', 'frazergtfc9@outlook.com'),
+(3, 'EuanParry123', '$2y$10$n3SxG/5GD1EkA0xw.KanxeMMBZBDL6aYifWk6X/IH1GGTDLWk9jdG', 'Euan', 'Pazza', 'Australia', 'active', '2020-01-07', 'user', 'euan@gmail.com');
 
 --
 -- Indexes for dumped tables
@@ -174,13 +174,13 @@ ALTER TABLE `live_chat`
 -- AUTO_INCREMENT for table `news`
 --
 ALTER TABLE `news`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
