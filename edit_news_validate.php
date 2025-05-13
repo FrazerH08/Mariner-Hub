@@ -1,6 +1,9 @@
 <?php
 include 'connectdb.php';
 
+var_dump($_POST);
+
+
 //put a foreach loop to find out the keys in $_POST / $_FILES
 foreach ($_FILES as $key => $value){
     echo($key . ' this is adams debug test');
@@ -47,8 +50,9 @@ if ($uploadOk == 0 ){
         echo "Sorry they was an error uploading your file.";
     }
 }
+$id = $_POST['id'];
 $title = $_POST['title'];
-$description =$_POST['description'];
+$description = $_POST['description'];
 $content = $_POST['content'];
 $picture = basename($_FILES['fileToUpload']['name']);
 
@@ -57,7 +61,7 @@ $sanitisedTitle = htmlentities(string: $title);
 $sanitisedDescription = htmlentities(string: $description);
 $sanitisedPost = htmlentities(string: $content);
 
-$sql ="INSERT INTO news (title, description, content , picture) VALUES ('$sanitisedTitle', '$sanitisedDescription', '$sanitisedPost', '$picture')";
+$sql ="UPDATE news SET title='$sanitisedTitle', description='$sanitisedDescription', content='$sanitisedPost' , picture='$target_file' WHERE id = $id";
 
 if ($conn->query(query: $sql) === TRUE) {
     echo "New record created successfully";
