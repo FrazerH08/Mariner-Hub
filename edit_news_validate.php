@@ -61,7 +61,9 @@ $sanitisedTitle = htmlentities(string: $title);
 $sanitisedDescription = htmlentities(string: $description);
 $sanitisedPost = htmlentities(string: $content);
 
+
 $sql ="UPDATE news SET title='$sanitisedTitle', description='$sanitisedDescription', content='$sanitisedPost' , picture='$picture' WHERE id = $id";
+
 
 if ($conn->query(query: $sql) === TRUE) {
     echo "New record created successfully";
