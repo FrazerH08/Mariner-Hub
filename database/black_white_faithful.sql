@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 13, 2025 at 04:09 PM
+-- Generation Time: May 16, 2025 at 12:46 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -82,7 +82,7 @@ CREATE TABLE `news` (
 
 INSERT INTO `news` (`id`, `title`, `description`, `picture`, `content`, `username`, `time_created`, `comments`) VALUES
 (1, 'Final Test', 'Hello This is frazzle', 0x75706c6f6164732f53637265656e73686f7420323032342d31312d3034203131343535342e706e67, 'please work!', '', '2025-05-13 10:09:48', ''),
-(14, 'Delete this', 'ffffdf', 0x53637265656e73686f7420323032342d31312d3035203131313132302e706e67, 'dfdfdfdfdf', '', '2025-05-13 12:12:05', '');
+(16, 'Testing', 'fdgdgfdg', 0x475446432e6a7067, 'gfdfdfdf', '', '2025-05-15 11:06:04', '');
 
 -- --------------------------------------------------------
 
@@ -111,20 +111,22 @@ CREATE TABLE `users` (
   `password` text NOT NULL,
   `firstname` text NOT NULL,
   `lastname` text NOT NULL,
+  `email` text NOT NULL,
+  `bio` text NOT NULL,
+  `profile_pic` blob NOT NULL,
   `region` text NOT NULL,
   `status` enum('active','inactive','','') NOT NULL,
   `birthdate` text NOT NULL,
-  `role` enum('user','admin','','') NOT NULL,
-  `email` text NOT NULL
+  `role` enum('user','admin','','') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `password`, `firstname`, `lastname`, `region`, `status`, `birthdate`, `role`, `email`) VALUES
-(1, 'FrazerGTFC', '$2y$10$EwvAmv/0GzWsB86V5ffUTecwJp3ehOCYM8nCSIJenXjPcBDaOHfMO', 'Frazer', 'Harness', 'United Kingdom', 'active', '2008-06-07', 'admin', 'frazergtfc9@outlook.com'),
-(3, 'EuanParry123', '$2y$10$n3SxG/5GD1EkA0xw.KanxeMMBZBDL6aYifWk6X/IH1GGTDLWk9jdG', 'Euan', 'Pazza', 'Australia', 'active', '2020-01-07', 'user', 'euan@gmail.com');
+INSERT INTO `users` (`id`, `username`, `password`, `firstname`, `lastname`, `email`, `bio`, `profile_pic`, `region`, `status`, `birthdate`, `role`) VALUES
+(1, 'FrazerGTFC', '$2y$10$EwvAmv/0GzWsB86V5ffUTecwJp3ehOCYM8nCSIJenXjPcBDaOHfMO', 'Frazer', 'Harness', 'frazergtfc9@outlook.com', '', '', 'United Kingdom', 'active', '2008-06-07', 'admin'),
+(3, 'EuanParry123', '$2y$10$n3SxG/5GD1EkA0xw.KanxeMMBZBDL6aYifWk6X/IH1GGTDLWk9jdG', 'Euan', 'Pazza', 'euan@gmail.com', '', '', 'Australia', 'active', '2020-01-07', 'user');
 
 --
 -- Indexes for dumped tables
@@ -174,7 +176,7 @@ ALTER TABLE `live_chat`
 -- AUTO_INCREMENT for table `news`
 --
 ALTER TABLE `news`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `users`

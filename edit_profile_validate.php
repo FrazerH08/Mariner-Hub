@@ -1,10 +1,7 @@
 <?php
 include 'connectdb.php';
+$id = $_POST['id'];
 
-var_dump($_POST);
-
-
-//put a foreach loop to find out the keys in $_POST / $_FILES
 foreach ($_FILES as $key => $value){
     echo($key . ' this is adams debug test');
   }
@@ -50,24 +47,15 @@ if ($uploadOk == 0 ){
         echo "Sorry they was an error uploading your file.";
     }
 }
-$id = $_POST['id'];
-$title = $_POST['title'];
-$description = $_POST['description'];
-$content = $_POST['content'];
-$picture = basename($_FILES['fileToUpload']['name']);
 
+$username = trim($_POST['username']);
+$email = trim($_POST['email']);
+$firstname = $_POST['firstname'];
+$lastname = $_POST['lastname'];
+$birthdate = $_POST['birthdate'];
+$region = $_POST['region'];
+$bio = $_POST['bio'];
+$profile_pic = basename($_FILES['fileToUpload']['name']);
 
-$sanitisedTitle = htmlentities(string: $title);
-$sanitisedDescription = htmlentities(string: $description);
-$sanitisedPost = htmlentities(string: $content);
-
-
-$sql ="UPDATE news SET title='$sanitisedTitle', description='$sanitisedDescription', content='$sanitisedPost' , picture='$picture' WHERE id = $id";
-
-
-if ($conn->query(query: $sql) === TRUE) {
-    echo "New record created successfully";
-    echo "<a href='list_news.php'>Back to news</a>";
-} else{
-    echo "Error: " . $sql ."<br>" . $conn->error;
-}
+$sql = "UPDATE users SET username='$username, email='$email', firstname='$firstname' , lastname='$lastname' , birthdate='$birthdate', region='$region', bio='$bio', profile_pic='$profile_pic' WHERE id = $id";
+?>
