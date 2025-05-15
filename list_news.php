@@ -54,7 +54,7 @@ if (empty($news)) {
                 
                 if($role === 'admin'){
                     echo '<p>
-                        <a href="edit_news_form.php?id=' . htmlspecialchars($row['id']) . '">Edit</a> | 
+                        <a href="edit_news.php?id=' . htmlspecialchars($row['id']) . '">Edit</a> | 
                         <a onclick="return confirm(\'Do You Really Want To Delete This?\')" href="delete_news.php?id=' . htmlspecialchars($row['id']) . '">Delete</a>
                     </p>';
                 }
