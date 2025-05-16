@@ -1,0 +1,26 @@
+
+body{
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+  }
+
+.nav-bar{
+  border-radius: 5px;
+  border: 2px solid #F60000;
+  background: #222121;
+  color: white;
+  }
+
+.nav-bar a{
+  color: white;
+  text-decoration: none;
+}
+li{
+  display: inline;
+}
+
+ul {
+  list-style-type: none;
+}
