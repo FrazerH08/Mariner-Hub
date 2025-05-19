@@ -1,3 +1,7 @@
+<?php
+include 'nav.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,21 +16,6 @@
 </head>
 
 <body>
-    <nav class="nav-bar">
-        <ul>
-            <li><a href="home.html" class="nav-bar-links">Home</a></li>
-            <li><a href="forum.html" class="nav-bar-links">Forum</a></li>
-            <li><a href="list_news.php" class="nav-bar-links">News</a></li>
-            <li><a href="stats.html" class="nav-bar-links">Stats</a></li>
-            <li><a href="about_club.html" class="nav-bar-links">About Club</a></li>
-            <li><a href="fixtures&results.html" class="nav-bar-links">Fixtures & Results </a></li>
-            <li><a href="signup.php" class="nav-bar-links">Sign Up</a></li>
-            <li><a href="login.php" class="nav-bar-links">Log In </a></li>
-            <li><a href="Viewaccount.html" class="nav-bar-links">View Account</a></li>
-            <li><a href="home.html" class="nav-bar-links">Admin Management</a></li>
-            <li><a href="feedback.php" class="nav-bar-links">Feedback</a></li>
-        </ul>
-    </nav>
     <h1 class="title"> <u>Black & White Faithful</u></h1>
     <p class="welcome-paragrapth"> “Black & White Faithful” is a modern website which has everything a Grimsby Fan needs, from articles stats , <br> fixtures and results and a forum to discuss all things about Grimsby! As a community of Grimsby Town fans <br> you will be able to interact
         like never before!</p>
