@@ -2,6 +2,7 @@
     session_start();
 
     include 'connectdb.php';
+    include 'nav.php';
     $id = $_GET['id'];
 
     $SQL = "SELECT title, description, content, picture FROM news WHERE id = $id";

@@ -1,16 +1,36 @@
-<form action="login_validation.php" method='POST'>
-        <br> <label for="username"><b>Username:</b></label> <br>
-        <input type="text" placeholder="Enter Username" name="username" required> <br>
-        <br> <label for="password"><b>Password:</b></label> <br>
-        <input type="password" placeholder="Enter Password" name="password" required>
-        <label>
-      <br> <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+
+<?php
+include 'nav.php';
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="login.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cambo&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
+</head>
+<body>
+<h1 class="title"><u>Login</u></h1>
+<form class="login-form" action="login_validation.php" method='POST'>
+        <br> <label class="labels" for="username"><b>Username:</b></label>
+        <input type="text" class="box"placeholder="Enter Username" name="username" required> <br>
+        <br> <br> <label class="labels" for="password"><b>Password:</b></label>
+        <input type="password" class="box" placeholder="Enter Password" name="password" required>
+        <label class="labels">
+      <br> <input type="checkbox" class="remember-me" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
         </label>
         <div class="next">
-            <button type="submit" name= "submit" value="submit" class="signupbtn" >Login</button>
+            <button type="submit" name= "submit" value="submit" class="loginbtn" >Login</button>
         </div>
-        <p> Need to sign up? <a href="signup.php"> Register now</a></p>
+        <p class="signup"> Need to sign up? <a href="signup.php"> Register now</a></p>
     </form>
+
+    <p> Why should I login? <br> If you login to your account you will see many benefits  , <br> you can leave comments on news and make comments on forums , setup your account and make yourself known in the Black & White faithful community.</p>
     <?php
     if(isset($_POST['submit'])){
         $username =mysqli_real_escape_string($conn,$_POST['username']);
@@ -33,3 +53,5 @@
     }else{
     }
     ?>
+</body>
+</html>

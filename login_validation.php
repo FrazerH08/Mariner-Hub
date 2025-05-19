@@ -1,5 +1,6 @@
 <?php
 include 'connectdb.php';
+include 'nav.php';
 session_start();
 
 if(isset($_POST['submit'])){

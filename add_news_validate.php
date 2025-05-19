@@ -1,6 +1,6 @@
 <?php
 include 'connectdb.php';
-
+include 'nav.php';
 //put a foreach loop to find out the keys in $_POST / $_FILES
 foreach ($_FILES as $key => $value){
     echo($key . ' this is adams debug test');

@@ -1,5 +1,6 @@
 <?php
 include 'connectdb.php';
+include 'nav.php';
 
 var_dump($_POST);
 

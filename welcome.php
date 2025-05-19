@@ -1,4 +1,5 @@
 <?php
+include 'nav.php';
 session_start();
 $role = $_SESSION['role'] ?? '';
 
@@ -12,10 +13,23 @@ if (!isset($_SESSION['username'])) {
 // Get username from session, with additional safety
 $username = $_SESSION['username'] ?? 'Guest';
 ?>
-    <h1>Hello <?php echo htmlspecialchars($username); ?>, Nice to see you! Welcome to the Black & White faithful</h1>
-    <h2> Look at the header for places to go! </h2>
-    <p> If you need any help with understanding the icons Click <a href="icons.html">Here</a></p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome To Black&White Faithful </title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="welcome.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cambo&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
+</head>
+<body>
+<h2>Hello <?php echo htmlspecialchars($username); ?>, Nice to see you! Welcome to the Black & White faithful</h2>
     <?php
     if($role === 'admin'){
         echo " As You are an admin you can delete news, edit news and post articles , here is the links to do so " ?> <br> <a href="news_upload.php">Create News</a><br> <a href="list_news.php">List news</a><?php
-    } ?>
+    }?>
+</body>
+</html>
