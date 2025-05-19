@@ -1,6 +1,7 @@
 <?php
 session_start();
 include 'connectdb.php';
+include 'nav.php';
 
 if (!isset($_GET['id'])) {
     die("Invalid or missing user ID.");

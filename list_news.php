@@ -1,7 +1,7 @@
 <?php
 session_start();
 include 'connectdb.php';
-
+include 'nav.php';
 $logged_in = $_SESSION['logged_in'] ?? false;
 $role = $_SESSION['role'] ?? '';
 

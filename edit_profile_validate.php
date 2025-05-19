@@ -1,5 +1,6 @@
 <?php
 include 'connectdb.php';
+include 'nav.php';
 $id = $_POST['id'];
 
 foreach ($_FILES as $key => $value){

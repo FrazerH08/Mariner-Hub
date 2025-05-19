@@ -1,3 +1,7 @@
+<?php
+include 'nav.php';
+?>
+
 <h1><u>Feedback Form</u></h1>
 <div class="container">
   <form action="feedback_validate.php" method="post">

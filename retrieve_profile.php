@@ -1,5 +1,6 @@
 <?php
 include 'connectdb.php';
+include 'nav.php';
 
 $news_id = $_GET['id'];
 
