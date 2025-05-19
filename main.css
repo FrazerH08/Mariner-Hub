@@ -31,9 +31,7 @@ li:last-child {
 li a {
     display: block;
     text-align: center;
-    padding: 14px 16px;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding: 14px 14px;
 }
 
 li a:hover {
@@ -49,7 +47,7 @@ ul {
 }
 
 .title {
-    margin-top: 5%; 
+    margin-top: 5%;
     text-align: center;
 }
 
@@ -78,7 +76,7 @@ ul {
 
 .smaller-article-image {
     width: 35%;
-    height: 35;
+    height: 35%;
 }
 
 .content-creatorbtn {
@@ -104,7 +102,7 @@ ul {
     text-align: center;
 }
 
-.box{
+.box {
     border: 2px solid #EE0A0E;
     font-size: large;
     padding: 0.5%;
@@ -132,4 +130,8 @@ ul {
 .loginbtn:hover {
     background-color: #EE0A0E;
     color: white;
+}
+
+.labels {
+    font-size: larger;
 }

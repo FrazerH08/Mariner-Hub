@@ -29,3 +29,20 @@ if($stmt->execute()) {
     echo  "Error: " . $sql ."<br>" . $conn->error;
 }
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Validate</title>
+<link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="feedback.css">
+  <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cambo&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+  </style>
+</head>
+<body>
+    
+</body>
+</html>

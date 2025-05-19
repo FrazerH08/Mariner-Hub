@@ -53,5 +53,7 @@ include 'nav.php';
         </div>
         <p> Already have an account? <a href="login.php"> Sign in now</a></p>
     </form>
+
+    <p> Why should I sign Up? <br> If you sign up you will be granted features which if your not signed up you cannot do. <br> If you sign up and log in you will be able to : <br> comment on forums , comment on articles and create latest rumours , please <br> sign up now! </p>
 </body>
 </html>
