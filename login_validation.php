@@ -1,7 +1,7 @@
 <?php
+session_start();
 include 'connectdb.php';
 include 'nav.php';
-session_start();
 
 if(isset($_POST['submit'])){
     $username = mysqli_real_escape_string($conn, $_POST['username']);
@@ -24,19 +24,36 @@ if(isset($_POST['submit'])){
         // Regenerate session ID for security
         session_regenerate_id(true);
 
-        // Store username and role in session
+        // Store username , id and role in session
+        $_SESSION['user_id'] =$user['id'];
         $_SESSION['username'] = $user['username'];
         $_SESSION['role'] = $user['role'];
         $_SESSION['logged_in']= true;
-
+        ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Validate</title>
+    <link rel="stylesheet" href="list_news.css">
+    <link rel="stylesheet" href="main.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cambo&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
+</head>
+<body>
+<?
         // Add debugging
         echo "Debug - Session username set: " . $_SESSION['username'];
 
         header("Location: welcome.php");
         exit();
     } else {
-        echo "<h1>Invalid username or password</h1>";
+        echo "<h1 class='title'>Invalid username or password</h1>";
         echo "<a href='javascript:self.history.back()'><button class='btn'>Go Back</button></a>";
     }
 }
 ?>
+</body>
+</html>

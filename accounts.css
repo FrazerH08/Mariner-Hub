@@ -1,0 +1,18 @@
+.postCard a {
+    text-align: center;
+    border: 2px solid #EE0A0E;
+    padding: 10px 60px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: white;
+    text-decoration: none;
+    color: black;
+    display: inline-block;
+    font-size: 120%;
+    transition-duration: 0.4s;
+}
+
+.postCard a:hover {
+    background-color: #EE0A0E;
+    color: white;
+}

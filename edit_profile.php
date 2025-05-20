@@ -30,21 +30,36 @@ $status = $row['status'];
 $birthdate = $row['birthdate'];
 $role = $row['role'];
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="signup.css">
+    <link rel="stylesheet" href="accounts.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cambo&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
+</head>
+<body>
+    <h1 class="title"> <u>Edit Profile</u></h1>
 <form action="edit_profile_validate.php" method='POST' enctype="multipart/form-data">
-        <input type="hidden" name="id" value="<?php echo $id;?>">
-        <label for="firstname"><b>First name:</b></label>
-        <input type="text" name="firstname" value="<?php echo $firstname;?> "required> <br>
+        <input type="hidden" class="box" name="id" value="<?php echo $id;?>">
+        <label class="labels" for="firstname"><b>First name:</b></label>
+        <input type="text" class="box" name="firstname" value="<?php echo $firstname;?> "required> <br>
         <br>
-        <label for="lastname"><b>Lastname:</b></label>
-        <input type="text" name="lastname" value="<?php echo $lastname;?> "required> <br>
+        <label class="labels" for="lastname"><b>Lastname:</b></label>
+        <input type="text" class="box" name="lastname" value="<?php echo $lastname;?> "required> <br>
         <br>
-        <label for="dob"><b>Date of birth:</b></label>
-        <input type="date" id="birthdate"name="birthdate" value="<?php echo $birthdate;?>"> <br> <br>
-        <label for ="bio"><b>Bio:</b></label>
-        <input type="text" name="bio" value="<?php echo $bio;?>"> <br>
+        <label class="labels" for="dob"><b>Date of birth:</b></label>
+        <input type="date" class="box" id="birthdate"name="birthdate" value="<?php echo $birthdate;?>"> <br> <br>
+        <label class="labels" for ="bio"><b>Bio:</b></label>
+        <input type="text" class="box" name="bio" value="<?php echo $bio;?>"> <br>
         <br>
-        <label for="region"><b>Region:</b></label> 
-        <select id="region" name="region" value="<?php echo $region;?>"> 
+        <label class="labels" for="region"><b>Region:</b></label> 
+        <select id="region" class="box" name="region" value="<?php echo $region;?>"> 
         <option value="Australia">Australia</option>
         <option value="Canada">Canada</option>
         <option value="USA">USA</option>
@@ -52,16 +67,16 @@ $role = $row['role'];
         </select>
         <br>
         <br>
-        <label for="email"><b>Email:</b></label> <br>
-        <input type="text"  name="email" value="<?php echo $email;?>" required> <br>
-        <br> <label for="username"><b>Username:</b></label> <br>
-        <input type="text" name="username" value="<?php echo $username; ?>" required> <br>
-        <input type="file" name="fileToUpload" id="fileToUpload">
-        <div class="next">
-            <button type="submit" name= "submit" value="submit" class="signupbtn" >Next</button>
+        <label class="labels" for="email"><b>Email:</b></label> <br>
+        <input type="text" class="box"  name="email" value="<?php echo $email;?>" required> <br>
+        <br> <label class="labels" for="username"><b>Username:</b></label> <br>
+        <input type="text" class="box" name="username" value="<?php echo $username; ?>" required> <br>
+        <br> <label for="pictureup" class="custom-file-upload">Choose Image </label>
+        <input type="file" id="pictureup"name="fileToUpload">
+        <br>
+        <br> <div class="next">
+            <button type="submit" class="box" name= "submit" value="submit" class="signupbtn" >Next</button>
         </div>
     </form>
-
-
-
-?>
+</body>
+</html>
