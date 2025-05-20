@@ -1,0 +1,54 @@
+
+.refresh{
+    text-align: center;
+    border: 2px solid #EE0A0E;
+    padding: 10px 69px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: white;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 120%;
+    transition-duration: 0.4s;
+}
+.refresh a{
+    color: black;
+    text-decoration: none ;
+}
+.refresh:hover {
+    background-color: #EE0A0E;
+    color: white;
+}
+.refresh:hover a{
+    color: white;
+}
+.search-button input {
+    padding-left: 5%;
+    padding-right: 5%;
+    font-size: larger;
+    border: 2px solid #EE0A0E;
+}
+.search-button button{
+    text-align: center;
+    padding: 5px 14px;
+    border: 2px solid #EE0A0E;
+    cursor: pointer;
+    background-color: white;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 120%;
+    transition-duration: 0.4s;
+}
+.search-button button:hover{
+    background-color: #EE0A0E;
+    color: white;
+}
+
+.postCard{
+    display: grid;
+}
+
+.article-image{
+
+
+}

@@ -33,10 +33,23 @@ if (empty($news)) {
     }
 }
 ?>
-    <h1 class="title"><b><u>All Articles</u></b></h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List News</title>
+    <link rel="stylesheet" href="list_news.css">
+    <link rel="stylesheet" href="main.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cambo&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
+</head>
+<body>
+<h1 class="title"><b><u>All Articles</u></b></h1>
     <div class="refresh">
-        <button> <a href="list_news.php"> Click here to refresh articles</a></button>
-    </div> 
+        <a> <a href="list_news.php"> Click here to refresh articles</a></a>
+    </div>
     <div class="search-button">
         <form method='POST'>
             <input type="text" placeholder="Search for a article or author" name="search">
@@ -50,11 +63,14 @@ if (empty($news)) {
         if (!empty($news)) {
             foreach ($news as $row) {
                 echo '<section class="postCard">';
-                echo '<p><a href="retrieve_news.php?id=' . htmlspecialchars($row['id']) . '">' . '<br>', htmlspecialchars($row['title']) . '</a></p>';
-                
+                  if (!empty($row['picture'])) {
+                    echo '<img src="' . htmlspecialchars($row['picture']) . '" alt="Article image" class="article-image">' . '<br>';
+                }
+                echo '<p><a href="retrieve_news.php?id=' . htmlspecialchars($row['id']) . '">' . '<br>',  htmlspecialchars($row['title']) . '</a></p>';
+
                 if($role === 'admin'){
                     echo '<p>
-                        <a href="edit_news.php?id=' . htmlspecialchars($row['id']) . '">Edit</a> | 
+                        <a href="edit_news.php?id=' . htmlspecialchars($row['id']) . '">Edit</a> |
                         <a onclick="return confirm(\'Do You Really Want To Delete This?\')" href="delete_news.php?id=' . htmlspecialchars($row['id']) . '">Delete</a>
                     </p>';
                 }

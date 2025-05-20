@@ -26,7 +26,7 @@ $username = $_SESSION['username'] ?? 'Guest';
     </style>
 </head>
 <body>
-<h2>Hello <?php echo htmlspecialchars($username); ?>, Nice to see you! Welcome to the Black & White faithful</h2>
+<h2>Hello <?php echo htmlspecialchars($username); ?>, Nice to see you! Welcome to the Black & White Faithful</h2>
     <?php
     if($role === 'admin'){
         echo " As You are an admin you can delete news, edit news and post articles , here is the links to do so " ?> <br> <a href="news_upload.php">Create News</a><br> <a href="list_news.php">List news</a><?php
