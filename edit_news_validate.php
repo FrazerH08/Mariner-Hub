@@ -61,7 +61,7 @@ $sanitisedDescription = htmlentities(string: $description);
 $sanitisedPost = htmlentities(string: $content);
 
 
-$sql ="UPDATE news SET title='$sanitisedTitle', description='$sanitisedDescription', content='$sanitisedPost' , picture='$picture' WHERE id = $id";
+$sql ="UPDATE news SET title='$sanitisedTitle', description='$sanitisedDescription', content='$sanitisedPost' , picture='$target_file' WHERE id = $id";
 ?>
 <!DOCTYPE html>
 <html lang="en">

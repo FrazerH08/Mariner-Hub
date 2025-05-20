@@ -62,7 +62,7 @@ if (empty($news)) {
         // Display posts
         if (!empty($news)) {
             foreach ($news as $row) {
-                echo '<section class="postCard">';
+                echo '<section class="newsCard">';
                   if (!empty($row['picture'])) {
                     echo '<img src="' . htmlspecialchars($row['picture']) . '" alt="Article image" class="article-image">' . '<br>';
                 }

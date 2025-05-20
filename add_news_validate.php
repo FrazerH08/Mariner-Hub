@@ -57,7 +57,7 @@ $sanitisedTitle = htmlentities(string: $title);
 $sanitisedDescription = htmlentities(string: $description);
 $sanitisedPost = htmlentities(string: $content);
 
-$sql ="INSERT INTO news (title, description, content , picture) VALUES ('$sanitisedTitle', '$sanitisedDescription', '$sanitisedPost', '$picture')";
+$sql ="INSERT INTO news (title, description, content , picture) VALUES ('$sanitisedTitle', '$sanitisedDescription', '$sanitisedPost', '$target_file')";
 ?>
 <!DOCTYPE html>
 <html lang="en">

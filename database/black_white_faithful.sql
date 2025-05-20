@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 20, 2025 at 04:52 PM
+-- Generation Time: May 21, 2025 at 01:04 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -81,14 +81,8 @@ CREATE TABLE `news` (
 --
 
 INSERT INTO `news` (`id`, `title`, `description`, `picture`, `content`, `username`, `time_created`, `comments`) VALUES
-(1, 'Final Test', 'Hello This is frazzle', 0x53637265656e73686f7420323032342d31322d3136203134303131382e706e67, 'please work!', '', '2025-05-20 14:26:05', ''),
-(17, 'Tuesdays Work', 'Euan loved today', 0x53637265656e73686f7420323032342d31312d3134203131353034382e706e67, 'Euan got injured because he was ill ', '', '2025-05-20 14:24:16', ''),
-(18, 'What did Euan Do Yesterday', 'Euan did no work', 0x53637265656e73686f7420323032342d31302d3134203134313530322e706e67, 'Harry said hi ', '', '2025-05-20 14:39:51', ''),
-(19, 'What did Euan Do Yesterday', 'Euan did no work', 0x53637265656e73686f7420323032342d31302d3134203134313530322e706e67, 'Harry said hi ', '', '2025-05-20 14:41:26', ''),
-(20, 'What did Euan Do Yesterday', 'Euan did no work', 0x53637265656e73686f7420323032342d31302d3134203134313530322e706e67, 'Harry said hi ', '', '2025-05-20 14:41:33', ''),
-(21, 'What did Euan Do Yesterday', 'Euan did no work', 0x53637265656e73686f7420323032342d31302d3134203134313530322e706e67, 'Harry said hi ', '', '2025-05-20 14:42:42', ''),
-(22, 'What did Euan Do Yesterday', 'Euan did no work', 0x53637265656e73686f7420323032342d31302d3134203134313530322e706e67, 'Harry said hi ', '', '2025-05-20 14:42:55', ''),
-(23, 'What did Euan Do Yesterday', 'Euan did no work', 0x53637265656e73686f7420323032342d31302d3134203134313530322e706e67, 'Harry said hi ', '', '2025-05-20 14:43:44', '');
+(1, 'Final Test', 'Hello This is frazzle', 0x75706c6f6164732f53637265656e73686f7420323032342d31322d3136203134303131382e706e67, 'please work!', '', '2025-05-20 16:41:56', ''),
+(17, 'Tuesdays Work', 'Euan loved today', 0x75706c6f6164732f53637265656e73686f7420323032342d31302d3239203132303932322e706e67, 'Euan got injured because he was ill ', '', '2025-05-20 16:42:54', '');
 
 -- --------------------------------------------------------
 
@@ -131,7 +125,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `firstname`, `lastname`, `email`, `bio`, `profile_pic`, `region`, `status`, `birthdate`, `role`) VALUES
-(1, 'FrazerGTFC', '$2y$10$EwvAmv/0GzWsB86V5ffUTecwJp3ehOCYM8nCSIJenXjPcBDaOHfMO', 'Frazer', 'Harness', 'frazergtfc9@outlook.com', '', '', 'United Kingdom', 'active', '2008-06-07', 'admin'),
+(1, 'FrazerGTFC', '$2y$10$EwvAmv/0GzWsB86V5ffUTecwJp3ehOCYM8nCSIJenXjPcBDaOHfMO', 'Frazer ', 'Harness ', 'frazergtfc9@outlook.com', 'Hello I love Euan ', 0x44617669642d417274656c6c2e6a7067, 'United Kingdom', 'active', '2008-06-07', 'admin'),
 (3, 'EuanParry123', '$2y$10$n3SxG/5GD1EkA0xw.KanxeMMBZBDL6aYifWk6X/IH1GGTDLWk9jdG', 'Euan', 'Pazza', 'euan@gmail.com', '', '', 'Australia', 'active', '2020-01-07', 'user'),
 (4, 'harold1234', '$2y$10$76PrL2sPvomrdLcM4ROCY.O4Hvp7pHd38QS/gTZlFJOn63q77fBNe', 'harry', 'barker', 'HAROLd123@gmail.com', '', '', 'United Kingdom', 'active', '2007-08-13', 'user'),
 (5, 'thegreatone', '$2y$10$qs0Df8w2wAwTVdXJ8Ceg7ek/s8qM0Wjb5/hv62.pVzMq1wxeh.F1O', 'euan ', 'glyn', 'euanismydadd@yahoo.com', '', '', 'USA', 'active', '12121-02-12', 'admin');
@@ -184,7 +178,7 @@ ALTER TABLE `live_chat`
 -- AUTO_INCREMENT for table `news`
 --
 ALTER TABLE `news`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `users`
