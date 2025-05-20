@@ -135,3 +135,49 @@ ul {
 .labels {
     font-size: larger;
 }
+
+.postCard{
+    margin-top: 5%;
+}
+
+#pictureup{
+   display: none;
+}
+
+button[type=submit]{
+    text-align: center;
+    border: 2px solid #EE0A0E;
+    padding: 10px 60px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: white;
+    text-decoration: none;
+    color: black;
+    display: inline-block;
+    font-size: 120%;
+    transition-duration: 0.4s;
+}
+button[type=submit]:hover{
+    background-color: #EE0A0E;
+    color: white;
+}
+
+.custom-file-upload{
+    text-align: center;
+    border: 2px solid #EE0A0E;
+    padding: 10px 60px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: white;
+    text-decoration: none;
+    color: black;
+    display: inline-block;
+    font-size: 120%;
+    transition-duration: 0.4s;
+}
+
+.custom-file-upload:hover{
+    background-color: #EE0A0E;
+    color: white;
+}
+

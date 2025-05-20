@@ -11,6 +11,19 @@ if($role != 'admin' || $logged_in == false) {
 }
 
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create News </title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="feedback.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cambo&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
+</head>
+<body>
 <h1><u>Create News</u></h1>
     <div class="formcss">
     <form action="add_news_validate.php" method="post" enctype="multipart/form-data">
@@ -23,6 +36,10 @@ if($role != 'admin' || $logged_in == false) {
         <textarea name="content" id="content" cols="180" rows="26" placeholder="Enter News Content" required></textarea>
         <br>
         <button type="submit" class="btn" onclick="alert('Thanks for submitting!')">Submit</button>
-        <input type="file" id="pictureup" name="fileToUpload">
+        <label for="pictureup" class="custom-file-upload">Choose Image </label>
+        <input type="file" id="pictureup"name="fileToUpload">
     </form>
     </div>
+</body>
+</html>
+

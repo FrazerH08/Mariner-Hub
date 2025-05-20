@@ -1,14 +1,12 @@
 <?php
 include 'connectdb.php';
 include 'nav.php';
+// var_dump($_POST);
 
-var_dump($_POST);
-
-
-//put a foreach loop to find out the keys in $_POST / $_FILES
-foreach ($_FILES as $key => $value){
-    echo($key . ' this is adams debug test');
-  }
+///put a foreach loop to find out the keys in $_POST / $_FILES
+// foreach ($_FILES as $key => $value){
+//     echo($key . ' this is adams debug test');
+//   }
 $target_dir = "uploads/";
 $target_file = $target_dir . basename ($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
@@ -32,7 +30,7 @@ if (file_exists($target_file)){
 }
 
 // file size check
-if ($_FILES["fileToUpload"]["size"] > 500000) {
+if ($_FILES["fileToUpload"]["size"] > 5000000) {
     echo " Sorry this file is too large";
     $uploadOk = 0;
 }
@@ -64,11 +62,29 @@ $sanitisedPost = htmlentities(string: $content);
 
 
 $sql ="UPDATE news SET title='$sanitisedTitle', description='$sanitisedDescription', content='$sanitisedPost' , picture='$picture' WHERE id = $id";
-
-
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit news validate</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="edit_news.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cambo&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
+</head>
+<body>
+<?php
 if ($conn->query(query: $sql) === TRUE) {
-    echo "New record created successfully";
+    echo "<h1>New record created successfully</h1>";
     echo "<a href='list_news.php'>Back to news</a>";
 } else{
     echo "Error: " . $sql ."<br>" . $conn->error;
 }
+?>
+</body>
+</html>
+<?php
+

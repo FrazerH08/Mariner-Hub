@@ -9,7 +9,7 @@
             <li><a href="signup.php" class="nav-bar-links">Sign Up</a></li>
             <li><a href="login.php" class="nav-bar-links">Log In </a></li>
             <li><a href="retrieve_profile.php" class="nav-bar-links">View Account</a></li>
-            <li><a href="home.html" class="nav-bar-links">Admin Management</a></li>
+            <li><a href="admin_management.php" class="nav-bar-links">Admin Management</a></li>
             <li><a href="feedback.php" class="nav-bar-links">Feedback</a></li>
         </ul>
     </nav>
