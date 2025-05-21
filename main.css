@@ -62,21 +62,25 @@ ul {
 
 .main-content {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 2fr 1fr;
     grid-gap: 10%;
     margin-bottom: 3%;
     align-items: start;
 }
 
 .latest-article {
+    grid-column: 1/2;
     grid-row: span 2;
-    width: 80%;
-    height: 80%;
 }
 
 .smaller-article-image {
-    width: 35%;
-    height: 35%;
+    width: 70%;
+    height: auto;
+}
+
+.article-image {
+    width: 80%;
+    height: auto;
 }
 
 .content-creatorbtn {

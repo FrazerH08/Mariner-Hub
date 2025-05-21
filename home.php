@@ -1,5 +1,12 @@
 <?php
 include 'nav.php';
+$stmt = $conn->prepare("SELECT * FROM news ORDER BY time_created DESC");
+    $stmt->execute();
+    $result = $stmt->get_result();
+    
+    while ($row = $result->fetch_assoc()) {
+        $news[] = $row;
+    }
 ?>
 
 <!DOCTYPE html>
@@ -22,22 +29,34 @@ include 'nav.php';
 
     <div class="grid-container">
         <div class="main-content">
-            <div class="latest-article">
-                <img class="article-image" src="pictures\latest article.png" alt="">
-                <h1>Title:</h1>
-            </div>
-            <div class="second-article">
-                <img class="smaller-article-image" src="pictures/latest article.png" alt="">
-                <h2> Title: </h2>
-            </div>
-            <div class="third-article">
-                <img class="smaller-article-image" src="pictures/latest article.png" alt="">
-                <h2> Title: </h2>
-            </div>
-        </div>
+    <?php
+    // Limit to first 3 articles in the db , the for loop starts at the first article with the index being at 0 the loop stops after getting 3 articles
+    for ($i = 0; $i < min(3, count($news)); $i++) {
+        $article = $news[$i];
+        $title = htmlspecialchars($article['title']);
+        $image = !empty($article['picture']) ? htmlspecialchars($article['picture']) : 'pictures/default.png'; // if its not empty it will display the picture from the database but if it is it will just use the default one
+        $link = 'retrieve_news.php?id=' . htmlspecialchars($article['id']); // so users can click on the image and go to the article from there
+
+        if ($i === 0) {
+            // Latest article as the index is 0 
+            echo '<div class="latest-article">';
+            echo '<a href="' . $link . '"><img class="article-image" src="' . $image . '" alt=""></a>';
+            echo '<h1><a href="' . $link . '">' . $title . '</a></h1>';
+            echo '</div>';
+        } else {
+            // Smaller articles
+            echo '<div class="' . ($i === 1 ? 'second-article' : 'third-article') . '">';
+            echo '<a href="' . $link . '"><img class="smaller-article-image" src="' . $image . '" alt=""></a>';
+            echo '<h2><a href="' . $link . '">' . $title . '</a></h2>';
+            echo '</div>';
+        }
+    }
+    ?>
+</div>
+
     </div>
     <div class="content-creators">
-        <a href="content-creators.php" class="content-creatorbtn"> Grimsby Content Creators</a>
+        <a href="content_creators.php" class="content-creatorbtn"> Grimsby Content Creators</a>
     </div>
 </body>
 
