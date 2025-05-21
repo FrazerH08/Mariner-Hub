@@ -46,7 +46,16 @@ if (empty($news)) {
     </style>
 </head>
 <body>
-<h1 class="title"><b><u>All Articles</u></b></h1>
+<h1 class="title"><u>All Articles</u></h1>
+<br>
+<?php
+if($role === 'admin'){
+    echo '<a href="news_upload.php" class="content-creatorbtn">Create Article</a>'; 
+}
+?>
+<br> <br>
+<a class="rumoursbtn" href="latest_rumours.php">Latest GTFC Rumours</a> <br>
+<br>
     <div class="refresh">
         <a> <a href="list_news.php"> Click here to refresh articles</a></a>
     </div>
@@ -64,7 +73,7 @@ if (empty($news)) {
             foreach ($news as $row) {
                 echo '<section class="newsCard">';
                   if (!empty($row['picture'])) {
-                    echo '<img src="' . htmlspecialchars($row['picture']) . '" alt="Article image" class="article-image">' . '<br>';
+                    echo '<img src="' . htmlspecialchars($row['picture']) . '" alt="Article image" class="listnews-article-image">' . '<br>';
                 }
                 echo '<p><a href="retrieve_news.php?id=' . htmlspecialchars($row['id']) . '">' . '<br>',  htmlspecialchars($row['title']) . '</a></p>';
 

@@ -24,6 +24,6 @@ $username = $_SESSION['username'] ?? 'Guest';
 </head>
 <body>
     <h2>Hello <?php echo htmlspecialchars($username); ?>, Nice to see you! Welcome to the Black & White Faithful</h2>
-    <a class="links" href="news_upload.php"> Create News</a>
+    <a class="content-creatorbtn" href="news_upload.php"> Create News</a>
 </body>
 </html>

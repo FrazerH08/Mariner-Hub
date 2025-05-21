@@ -25,7 +25,7 @@ if($result->num_rows > 0) {
                 echo "<img src='data:image/jpeg;base64," . base64_encode($row['picture']) . "' alt='Post Image'>";
             }
         }
-        echo '<section class="postCard">';
+        echo '<section class="postCard2">';
         echo "<h2>" . htmlspecialchars($row['title']) . "</h2>";
         echo "<h3>" . htmlspecialchars($row['description']) . "</h3>";
         echo "<p>" . htmlspecialchars($row['content']) . "</p>";

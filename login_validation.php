@@ -43,9 +43,9 @@ if(isset($_POST['submit'])){
     </style>
 </head>
 <body>
-<?
+<?php
         // Add debugging
-        echo "Debug - Session username set: " . $_SESSION['username'];
+        // echo "Debug - Session username set: " . $_SESSION['username'];
 
         header("Location: welcome.php");
         exit();
