@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 21, 2025 at 01:04 AM
+-- Generation Time: May 22, 2025 at 12:51 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -43,7 +43,8 @@ CREATE TABLE `feedback` (
 --
 
 INSERT INTO `feedback` (`id`, `firstname`, `lastname`, `username`, `email`, `region`, `subject`, `date_written`) VALUES
-(0, 'Euan', 'Parry', 'Euan123', '123@gmail.com', 'United Kingdom', 'I hate this website', '2025-05-08 09:21:31');
+(1, 'Euan', 'Parry', 'Euan123', '123@gmail.com', 'United Kingdom', 'I hate this website', '2025-05-08 09:21:31'),
+(2, 'euan', 'parry', 'Enrol123', 'euan@gmail.com', 'United Kingdom', 'I don&#039;t like the about club page as it is empty!!!!!!!!!!!!!!!!!!!!!!!!!!!', '2025-05-22 10:49:11');
 
 -- --------------------------------------------------------
 
@@ -81,8 +82,9 @@ CREATE TABLE `news` (
 --
 
 INSERT INTO `news` (`id`, `title`, `description`, `picture`, `content`, `username`, `time_created`, `comments`) VALUES
-(1, 'Final Test', 'Hello This is frazzle', 0x75706c6f6164732f53637265656e73686f7420323032342d31322d3136203134303131382e706e67, 'please work!', '', '2025-05-20 16:41:56', ''),
-(17, 'Tuesdays Work', 'Euan loved today', 0x75706c6f6164732f53637265656e73686f7420323032342d31302d3239203132303932322e706e67, 'Euan got injured because he was ill ', '', '2025-05-20 16:42:54', '');
+(1, 'Final Test', 'Hello This is frazzle', 0x75706c6f6164732f53637265656e73686f7420323032342d30392d3139203131313133332e706e67, 'please work!', '', '2025-05-22 08:16:12', ''),
+(17, 'Tuesdays Work', 'Euan loved today', 0x75706c6f6164732f53637265656e73686f7420323032342d31312d3035203134343033322e706e67, 'Euan got injured because he was ill ', '', '2025-05-22 08:16:26', ''),
+(23, 'What did Euan Do Yesterday', 'Euan did no work', 0x75706c6f6164732f53637265656e73686f7420323032342d30392d3139203131313333332e706e67, 'Harry said hi ', '', '2025-05-22 08:15:32', '');
 
 -- --------------------------------------------------------
 
@@ -125,10 +127,11 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `firstname`, `lastname`, `email`, `bio`, `profile_pic`, `region`, `status`, `birthdate`, `role`) VALUES
-(1, 'FrazerGTFC', '$2y$10$EwvAmv/0GzWsB86V5ffUTecwJp3ehOCYM8nCSIJenXjPcBDaOHfMO', 'Frazer ', 'Harness ', 'frazergtfc9@outlook.com', 'Hello I love Euan ', 0x44617669642d417274656c6c2e6a7067, 'United Kingdom', 'active', '2008-06-07', 'admin'),
+(1, 'FrazerGTFC', '$2y$10$EwvAmv/0GzWsB86V5ffUTecwJp3ehOCYM8nCSIJenXjPcBDaOHfMO', 'Frazer  ', 'Harness  ', 'frazergtfc9@outlook.com', 'Hello Euan Parry This is my blogsite', 0x53637265656e73686f7420323032352d30312d3231203039313231382e706e67, 'Australia', 'active', '2008-06-07', 'admin'),
 (3, 'EuanParry123', '$2y$10$n3SxG/5GD1EkA0xw.KanxeMMBZBDL6aYifWk6X/IH1GGTDLWk9jdG', 'Euan', 'Pazza', 'euan@gmail.com', '', '', 'Australia', 'active', '2020-01-07', 'user'),
 (4, 'harold1234', '$2y$10$76PrL2sPvomrdLcM4ROCY.O4Hvp7pHd38QS/gTZlFJOn63q77fBNe', 'harry', 'barker', 'HAROLd123@gmail.com', '', '', 'United Kingdom', 'active', '2007-08-13', 'user'),
-(5, 'thegreatone', '$2y$10$qs0Df8w2wAwTVdXJ8Ceg7ek/s8qM0Wjb5/hv62.pVzMq1wxeh.F1O', 'euan ', 'glyn', 'euanismydadd@yahoo.com', '', '', 'USA', 'active', '12121-02-12', 'admin');
+(5, 'thegreatone', '$2y$10$qs0Df8w2wAwTVdXJ8Ceg7ek/s8qM0Wjb5/hv62.pVzMq1wxeh.F1O', 'euan ', 'glyn', 'euanismydadd@yahoo.com', '', '', 'USA', 'active', '12121-02-12', 'admin'),
+(6, 'Enrol123', '$2y$10$4kxZa1hwdH5QR3STzJUYRu5N1nMIOmBmjF7iyH.bcUFxHdEuFdqdK', 'Euan ', 'Parry ', 'Egrparry28@gmail.com', 'Euan is grate', 0x53637265656e73686f7420323032342d31302d3134203134313530322e706e67, 'Australia', 'active', '2007-09-28', 'user');
 
 --
 -- Indexes for dumped tables
@@ -169,6 +172,12 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `feedback`
+--
+ALTER TABLE `feedback`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `live_chat`
 --
 ALTER TABLE `live_chat`
@@ -178,13 +187,13 @@ ALTER TABLE `live_chat`
 -- AUTO_INCREMENT for table `news`
 --
 ALTER TABLE `news`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
