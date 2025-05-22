@@ -23,8 +23,8 @@ if($stmt){
     $stmt->bind_param("ssssss", $sanitisedfirstname, $sanitisedlastname, $sanitisedusername, $sanitisedemail, $sanitisedcountry, $sanitisedsubject);
 }
 if($stmt->execute()) {
-    echo "<h1> Feedback Submitted! We will email you with the email you provided if we have any updates! </h1>";
-    echo "<h1> <a href='index.php'> <br> Back to Home</a> </h1>";
+    echo "<h1 class='title'> Feedback Submitted! We will email you with the email you provided if we have any updates! </h1>";
+    echo "<a href='home.php' class='content-creatorbtn'>  Back to Home</a>";
 } else{
     echo  "Error: " . $sql ."<br>" . $conn->error;
 }

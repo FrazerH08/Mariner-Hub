@@ -4,4 +4,10 @@ section {
 
 img {
     margin-top: 5%;
+    width: auto;
+    height: 80%;
+}
+
+textarea {
+    font-size: 150%;
 }
