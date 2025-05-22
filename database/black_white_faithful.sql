@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 22, 2025 at 12:51 PM
+-- Generation Time: May 22, 2025 at 11:11 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -20,6 +20,28 @@ SET time_zone = "+00:00";
 --
 -- Database: `black&white_faithful`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `comments`
+--
+
+CREATE TABLE `comments` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `news_id` int(11) NOT NULL,
+  `text` text NOT NULL,
+  `date_created` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `comments`
+--
+
+INSERT INTO `comments` (`id`, `user_id`, `news_id`, `text`, `date_created`) VALUES
+(1, 1, 17, 'I think Euan is great ', '2025-05-22 20:34:15'),
+(2, 1, 1, 'Frazzle this is shocking!', '2025-05-22 21:01:46');
 
 -- --------------------------------------------------------
 
@@ -44,7 +66,11 @@ CREATE TABLE `feedback` (
 
 INSERT INTO `feedback` (`id`, `firstname`, `lastname`, `username`, `email`, `region`, `subject`, `date_written`) VALUES
 (1, 'Euan', 'Parry', 'Euan123', '123@gmail.com', 'United Kingdom', 'I hate this website', '2025-05-08 09:21:31'),
-(2, 'euan', 'parry', 'Enrol123', 'euan@gmail.com', 'United Kingdom', 'I don&#039;t like the about club page as it is empty!!!!!!!!!!!!!!!!!!!!!!!!!!!', '2025-05-22 10:49:11');
+(2, 'euan', 'parry', 'Enrol123', 'euan@gmail.com', 'United Kingdom', 'I don&#039;t like the about club page as it is empty!!!!!!!!!!!!!!!!!!!!!!!!!!!', '2025-05-22 10:49:11'),
+(3, 'Alexander', 'Parry', 'Enrol123', 'Egrparry28@gmail.com', 'USA', 'This website is insane ! The PHP master strikes again. ', '2025-05-22 19:43:17'),
+(4, 'Alexander', 'Parry', 'Enrol123', 'Egrparry28@gmail.com', 'USA', 'This website is insane ! The PHP master strikes again. ', '2025-05-22 19:44:50'),
+(5, 'Alexander', 'Parry', 'Enrol123', 'Egrparry28@gmail.com', 'USA', 'This website is insane ! The PHP master strikes again. ', '2025-05-22 19:45:06'),
+(6, 'Alexander', 'Parry', 'Enrol123', 'Egrparry28@gmail.com', 'USA', 'This website is insane ! The PHP master strikes again. ', '2025-05-22 19:45:50');
 
 -- --------------------------------------------------------
 
@@ -131,11 +157,18 @@ INSERT INTO `users` (`id`, `username`, `password`, `firstname`, `lastname`, `ema
 (3, 'EuanParry123', '$2y$10$n3SxG/5GD1EkA0xw.KanxeMMBZBDL6aYifWk6X/IH1GGTDLWk9jdG', 'Euan', 'Pazza', 'euan@gmail.com', '', '', 'Australia', 'active', '2020-01-07', 'user'),
 (4, 'harold1234', '$2y$10$76PrL2sPvomrdLcM4ROCY.O4Hvp7pHd38QS/gTZlFJOn63q77fBNe', 'harry', 'barker', 'HAROLd123@gmail.com', '', '', 'United Kingdom', 'active', '2007-08-13', 'user'),
 (5, 'thegreatone', '$2y$10$qs0Df8w2wAwTVdXJ8Ceg7ek/s8qM0Wjb5/hv62.pVzMq1wxeh.F1O', 'euan ', 'glyn', 'euanismydadd@yahoo.com', '', '', 'USA', 'active', '12121-02-12', 'admin'),
-(6, 'Enrol123', '$2y$10$4kxZa1hwdH5QR3STzJUYRu5N1nMIOmBmjF7iyH.bcUFxHdEuFdqdK', 'Euan ', 'Parry ', 'Egrparry28@gmail.com', 'Euan is grate', 0x53637265656e73686f7420323032342d31302d3134203134313530322e706e67, 'Australia', 'active', '2007-09-28', 'user');
+(6, 'Enrol123', '$2y$10$4kxZa1hwdH5QR3STzJUYRu5N1nMIOmBmjF7iyH.bcUFxHdEuFdqdK', 'Euan ', 'Parry ', 'Egrparry28@gmail.com', 'Euan is grate', 0x53637265656e73686f7420323032342d31302d3134203134313530322e706e67, 'Australia', 'active', '2007-09-28', 'user'),
+(7, 'EuanSmells', '$2y$10$xzFzSyqM/cOxiOuSxMrHfeWtFr0MiNUFRARMMhWAOfAIX/gtJzMBW', 'Alex', 'Parry', 'alexparry@gmail.com', '', '', 'USA', 'active', '2004-03-28', 'user');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `comments`
+--
+ALTER TABLE `comments`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `feedback`
@@ -172,10 +205,16 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `comments`
+--
+ALTER TABLE `comments`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `feedback`
 --
 ALTER TABLE `feedback`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `live_chat`
@@ -193,7 +232,7 @@ ALTER TABLE `news`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
