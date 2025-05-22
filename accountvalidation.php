@@ -1,7 +1,20 @@
 <?php
 include 'connectdb.php';
 include 'nav.php';
-
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Validation</title>
+    <link rel="stylesheet" href="main.css">
+  <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cambo&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+  </style>
+</head>
+<body>
+    <?php
 // if form is submitted
 if(!isset($_POST['submit'])){
     header("Location: signup.php");
@@ -43,8 +56,8 @@ if (strlen($password) < 8) {
         $result = $stmt->get_result();
 
         if($result->num_rows > 0){
-            echo "<h1>Email is already taken, please change email</h1><br>";
-            echo "<a href='javascript:self.history.back()'><button class='btn'>Go Back</button></a>";
+            echo "<h1 class='title'>Email is already taken, please change email</h1><br>";
+            echo "<a href='javascript:self.history.back()' class='content-creatorbtn'> Go Back</a>";
         } else {
             // Hash the password , incase it gets hacked, based on testscript file
             $hashed_password = password_hash($password, PASSWORD_DEFAULT);
@@ -54,11 +67,14 @@ if (strlen($password) < 8) {
             $insert_stmt->bind_param("sssssss", $username, $email, $hashed_password, $firstname, $lastname, $birthdate, $region );
 
             if($insert_stmt->execute()){
-                echo "<h1>Registration was successful</h1><br>";
-                echo "<a href='login.php'><button class='btn'>Login</button></a>";
+                echo "<h1 class='title'>Registration was successful</h1><br>";
+                echo "<a href='login.php' class='content-creatorbtn'>Login</a>";
             } else {
-                echo "<h1>Registration failed</h1><br>";
+                echo "<h1 class='title'>Registration failed</h1><br>";
                 echo "Error: " . $insert_stmt->error;
             }
         }
         ?>
+
+</body>
+</html>

@@ -36,6 +36,43 @@ if($result->num_rows > 0) {
     echo "Sorry, 0 Results Returned";
 }
 
+
+?>
+
+<?php
+if (isset($_SESSION['user_id'])){
+    echo '
+    <section class="comment-form">
+        <form method="POST" action="post_comment.php">
+            <textarea name="text" placeholder="What would you like to comment..." required></textarea><br>
+            <input type="hidden" name="news_id" value="'. htmlspecialchars($news_id) . '">
+            <button type="submit">Post Comment</button>
+        </form>
+    </section>';
+} else{
+    echo '<p>Please <a href="login.php" class="content-creatorbtn">Log In</a> to comment </p>';
+}
+
+$commentQuery = "SELECT c.text, c.date_created, u.username 
+                 FROM comments c 
+                 JOIN users u ON c.user_id = u.id 
+                 WHERE c.news_id = ? 
+                 ORDER BY c.date_created DESC";
+$commentStmt = $conn->prepare($commentQuery);
+$commentStmt->bind_param("i", $news_id);
+$commentStmt->execute();
+$commentResult = $commentStmt->get_result();
+
+echo '<section class="comments">';
+echo '<h3>Comments:</h3>';
+while ($comment = $commentResult->fetch_assoc()) {
+    echo "<div class='comment-box'>";
+    echo "<strong>" . htmlspecialchars($comment['username']) . "</strong><br>";
+    echo "<p>" . nl2br(htmlspecialchars($comment['text'])) . "</p>";
+    echo "<small>" . $comment['date_created'] . "</small>";
+    echo "</div><hr>";
+}
+echo '</section>';
 $stmt->close();
 $conn->close();
 ?>
@@ -44,9 +81,10 @@ $conn->close();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php  echo htmlspecialchars($row['title']) ?> </title>
+    <title> Article</title>
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="retrieve_news.css">
+    <link rel="stylesheet" href="feedback.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Cambo&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
     </style>
