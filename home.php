@@ -41,13 +41,13 @@ $stmt = $conn->prepare("SELECT * FROM news ORDER BY time_created DESC");
             // Latest article as the index is 0 
             echo '<div class="latest-article">';
             echo '<a href="' . $link . '"><img class="article-image" src="' . $image . '" alt=""></a>';
-            echo '<h1><a href="' . $link . '">' . $title . '</a></h1>';
+            echo '<h1 class="big-article-title"><a href="' . $link . '">' . $title . '</a></h1>';
             echo '</div>';
         } else {
             // Smaller articles
             echo '<div class="' . ($i === 1 ? 'second-article' : 'third-article') . '">';
             echo '<a href="' . $link . '"><img class="smaller-article-image" src="' . $image . '" alt=""></a>';
-            echo '<h2><a href="' . $link . '">' . $title . '</a></h2>';
+            echo '<h2 class="big-article-title"><a href="' . $link . '">' . $title . '</a></h2>';
             echo '</div>';
         }
     }

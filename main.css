@@ -3,6 +3,7 @@ body {
     font-optical-sizing: auto;
     font-weight: weight;
     font-style: normal;
+    color: black;
 }
 
 .nav-bar {
@@ -185,4 +186,16 @@ button[type=submit]:hover {
 .custom-file-upload:hover {
     background-color: #EE0A0E;
     color: white;
+}
+
+.stats-summary {
+    font-size: 130%;
+}
+
+.big-article-title h1 {
+    color: black;
+}
+
+a {
+    color: black;
 }
