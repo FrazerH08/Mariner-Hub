@@ -4,6 +4,7 @@
 --
 -- Host: 127.0.0.1
 -- Generation Time: May 23, 2025 at 02:32 PM
+
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -41,8 +42,10 @@ CREATE TABLE `comments` (
 
 INSERT INTO `comments` (`id`, `user_id`, `news_id`, `text`, `date_created`) VALUES
 (1, 1, 17, 'I think Euan is great ', '2025-05-22 20:34:15'),
+
 (2, 1, 1, 'Frazzle this is shocking!', '2025-05-22 21:01:46'),
 (3, 8, 1, 'Hume willl stay ', '2025-05-23 12:15:34');
+
 
 -- --------------------------------------------------------
 
@@ -73,6 +76,7 @@ INSERT INTO `feedback` (`id`, `firstname`, `lastname`, `username`, `email`, `reg
 (5, 'Alexander', 'Parry', 'Enrol123', 'Egrparry28@gmail.com', 'USA', 'This website is insane ! The PHP master strikes again. ', '2025-05-22 19:45:06'),
 (6, 'Alexander', 'Parry', 'Enrol123', 'Egrparry28@gmail.com', 'USA', 'This website is insane ! The PHP master strikes again. ', '2025-05-22 19:45:50'),
 (7, 'Frazee', 'Harbess', 'FrazerGTFC', 'test@gmail.com', 'United Kingdom', 'This website is awful ', '2025-05-23 12:23:57');
+
 
 -- --------------------------------------------------------
 
@@ -163,6 +167,7 @@ INSERT INTO `users` (`id`, `username`, `password`, `firstname`, `lastname`, `ema
 (7, 'EuanSmells', '$2y$10$xzFzSyqM/cOxiOuSxMrHfeWtFr0MiNUFRARMMhWAOfAIX/gtJzMBW', 'Alex', 'Parry', 'alexparry@gmail.com', '', '', 'USA', 'active', '2004-03-28', 'user'),
 (8, 'MrTest123', '$2y$10$gsruPByhpzqk48vrhwEd9.K7Ww3YiSbVe9cIyEIcLf2O6Ll1gJto2', 'Test ', 'Testing ', 'test@gmail.com', 'This is a test bio ', 0x4a757374696e20416d616c757a6f722e77656270, 'Australia', 'active', '2003-02-03', 'user');
 
+
 --
 -- Indexes for dumped tables
 --
@@ -211,13 +216,17 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
+
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 
 --
 -- AUTO_INCREMENT for table `feedback`
 --
 ALTER TABLE `feedback`
+
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
 
 --
 -- AUTO_INCREMENT for table `live_chat`
@@ -235,6 +244,7 @@ ALTER TABLE `news`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
+
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
