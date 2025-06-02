@@ -31,22 +31,22 @@ $region = $_POST['region'];
 
 // email check
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    die("Invalid email format");
+    die("<h1 class='title'>Invalid email format</h1>");
 }
 
 // Validate username
 if (strlen($username) < 3 || strlen($username) > 20) {
-    die("Username must be between 3 and 20 characters");
+    die("<h1 class='title'>Username must be between 3 and 20 characters</h1>");
 }
 
 // Additional username validation (only alphanumeric)
 if (!preg_match("/^[a-zA-Z0-9_]+$/", $username)) {
-    die("Username can only contain letters, numbers, and underscores");
+    die(" <h1 class='title'>Username can only contain letters, numbers, and underscores</h1>");
 }
 
 // Password check 
 if (strlen($password) < 8) {
-    die("Password must be at least 8 characters long");
+    die(" <h1 class='title'> Password must be at least 8 characters long</h1>");
 }
 
         // Check if email already exists
