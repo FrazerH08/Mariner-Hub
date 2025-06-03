@@ -26,6 +26,7 @@ $imageFileType =strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Profile Validate</title>
     <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="login_validate.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Cambo&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
     </style>
@@ -71,7 +72,7 @@ if ($uploadOk == 0 ){
 
 $sql = "UPDATE users SET username='$username', email='$email', firstname='$firstname' , lastname='$lastname' , birthdate='$birthdate', region='$region', bio='$bio', profile_pic='$profile_pic' WHERE id = $id";
 if (mysqli_query($conn, $sql)) {
-    echo "Profile successfully updated. Redirecting in 5 seconds...";
+    echo '<p class="validate">Profile successfully updated. Redirecting in 5 seconds...</p>';
     header("refresh:5;url=retrieve_profile.php?id=$id");
 } else {
     echo "Error updating profile: " . mysqli_error($conn);
