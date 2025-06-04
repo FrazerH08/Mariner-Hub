@@ -26,9 +26,9 @@ if($result->num_rows > 0) {
             }
         }
         echo '<section class="postCard2">';
-        echo "<h2>" . htmlspecialchars($row['title']) . "</h2>";
-        echo "<h3>" . htmlspecialchars($row['description']) . "</h3>";
-        echo "<p>" . htmlspecialchars($row['content']) . "</p>";
+        echo "<h2>" . html_entity_decode($row['title']) . "</h2>";
+        echo "<h3>" . html_entity_decode($row['description']) . "</h3>";
+        echo "<p>" . html_entity_decode($row['content']) . "</p>";
         // Check if picture exists and is not null
         echo '</section>';
     }
