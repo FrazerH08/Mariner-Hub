@@ -29,7 +29,7 @@ $username = $_SESSION['username'] ?? 'Guest';
 <h2>Hello <?php echo htmlspecialchars($username); ?>, Nice to see you! Welcome to the Black & White Faithful</h2>
     <?php
     if($role === 'admin'){
-        echo " As You are an admin you can delete news, edit news and post articles , here is the links to do so " ?> <br> <a href="news_upload.php">Create News</a><br> <a href="list_news.php">List news</a><?php
+        echo " As You are an admin you can delete news, edit news and post articles , here is the links to do so " ?> <br> <a class='content-creatorbtn' href="admin_management.php">Admin Management</a><br> <?php
     }?>
 </body>
 </html>
