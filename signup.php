@@ -37,11 +37,11 @@ include 'nav.php';
         </select>
         <br>
         <br>
-        <label for="email"><b>Email:</b></label> <br>
+        <label for="email"><b>Email:</b></label>
         <input type="text" class="box" placeholder="Enter Email" name="email" required> <br>
-        <br> <label for="username"><b>Username:</b></label> <br>
+        <br> <label for="username"><b>Username:</b></label>
         <input type="text" class="box" placeholder="Enter Username" name="username" required> <br>
-        <br> <label for="password"><b>Password:</b></label> <br>
+        <br> <label for="password"><b>Password:</b></label>
         <input type="password" class="box" placeholder="Enter Password" name="password" required>
 
         <label>
