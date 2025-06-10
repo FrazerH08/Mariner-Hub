@@ -18,9 +18,9 @@
     if($result->num_rows == 0) {
         echo "No Article Found!";
     }else{
-        $title = $row['title'];
-        $description = $row['description'];
-        $content = htmlentities($row['content']);
+        $title =  html_entity_decode($row['title']);
+        $description =  html_entity_decode($row['description']);
+        $content =  html_entity_decode($row['content']);
         $picture = $row['picture'];
     }
 
