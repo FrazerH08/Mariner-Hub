@@ -23,7 +23,7 @@ $username = $_SESSION['username'] ?? 'Guest';
   </style>
 </head>
 <body>
-    <h2>Hello <?php echo htmlspecialchars($username); ?>, Nice to see you! Welcome to the Black & White Faithful</h2>
+    <h2>Hello <?php echo htmlspecialchars($username); ?>, Nice to see you! Welcome to the Mariner Hub </h2>
     <a class="content-creatorbtn" href="news_upload.php"> Create News</a>
 </body>
 </html>

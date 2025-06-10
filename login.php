@@ -30,7 +30,7 @@ include 'nav.php';
         <p class="signup"> Need to sign up? <a href="signup.php"> Register now</a></p>
     </form>
 
-    <p> Why should I login? <br> If you login to your account you will see many benefits  , <br> you can leave comments on news and make comments on forums , setup your account and make yourself known in the Black & White faithful community.</p>
+    <p> Why should I login? <br> If you login to your account you will see many benefits  , <br> you can leave comments on news and make comments on forums , setup your account and make yourself known in the Mariner Hub community.</p>
     <?php
     if(isset($_POST['submit'])){
         $username =mysqli_real_escape_string($conn,$_POST['username']);
