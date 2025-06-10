@@ -2,7 +2,7 @@
 $servername ="localhost";
 $username = "root";
 $password = "";
-$dbname = "black&white_faithful";
+$dbname = "mariner-hub";
 
 
 $conn = new mysqli($servername, $username, $password, $dbname);
