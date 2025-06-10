@@ -23,8 +23,8 @@ $stmt = $conn->prepare("SELECT * FROM news ORDER BY time_created DESC");
 </head>
 
 <body>
-    <h1 class="title"> <u>Black & White Faithful</u></h1>
-    <p class="welcome-paragrapth"> “Black & White Faithful” is a modern website which has everything a Grimsby Fan needs, from articles stats , <br> fixtures and results and a forum to discuss all things about Grimsby! As a community of Grimsby Town fans <br> you will be able to interact
+    <h1 class="title"> <u>Mariner Hub </u></h1>
+    <p class="welcome-paragrapth"> “Mariner Hub ” is a modern website which has everything a Grimsby Fan needs, from articles stats , <br> fixtures and results and a forum to discuss all things about Grimsby! As a community of Grimsby Town fans <br> you will be able to interact
         like never before!</p>
 
     <div class="grid-container">
