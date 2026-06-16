@@ -1,9 +1,12 @@
 <?php
-$servername ="localhost";
-$username = "root";
-$password = "";
-$dbname = "mariner-hub";
-
+// $servername ="localhost";
+// $username = "root";
+// $password = "";
+// $dbname = "mariner-hub";
+$servername = "sql101.infinityfree.com";
+$username = "if0_42200090";
+$password = "EnrolSep035";
+$dbname ="if0_42200090_mariner_hub";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
