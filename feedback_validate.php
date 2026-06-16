@@ -24,7 +24,7 @@ if($stmt){
 }
 if($stmt->execute()) {
     echo "<h1 class='title'> Feedback Submitted! We will email you with the email you provided if we have any updates! </h1>";
-    echo "<a href='home.php' class='content-creatorbtn'>  Back to Home</a>";
+    echo "<a href='index.php' class='content-creatorbtn'>  Back to Home</a>";
 } else{
     echo  "Error: " . $sql ."<br>" . $conn->error;
 }

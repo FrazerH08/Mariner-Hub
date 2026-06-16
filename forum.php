@@ -17,6 +17,6 @@ include 'nav.php';
     <h1 class="title"><u>Forum</u></h1>
     <h2> This page is not in  development right now , it is not available right now , sorry for any inconvenience caused.  </h2>
     <br>
-    <a class="content-creatorbtn"href="home.php">Go Back to Home</a>
+    <a class="content-creatorbtn"href="index.php">Go Back to Home</a>
 </body>
 </html>
