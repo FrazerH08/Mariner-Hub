@@ -12,7 +12,8 @@ include 'nav.php';
   <style>
         @import url('https://fonts.googleapis.com/css2?family=Cambo&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
   </style>
-</head>
+    <script src="nav.js" defer></script>
+</head>>
 <body>
   <h1 class="title"><u>Sign Up</u></h1>
 <form action="accountvalidation.php" method='POST'>

@@ -21,7 +21,8 @@ if($result->num_rows > 0) {
             <title>View Profile</title>
             <link rel="stylesheet" href="main.css">
             <link rel="stylesheet" href="accounts.css">
-        </head>
+            <script src="nav.js" defer></script>
+</head>>
         <body>
             <h1 class="title"><u>View Profile</u></h1>
             <?php

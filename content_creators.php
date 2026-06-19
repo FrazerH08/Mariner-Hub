@@ -11,7 +11,8 @@ include 'nav.php';
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Cambo&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
     </style>
-</head>
+    <script src="nav.js" defer></script>
+</head>>
 <body>
     <h1 class="title"><u>GTFC content creators</u></h1>
 
@@ -19,7 +20,7 @@ include 'nav.php';
         <h1><u>DN35 Podcast</u></h1>
         <p>DN3D Podcast is a podcast mainly hosted by Alex Green. The podcast was set up in 2016 as thats when their first ever episode was released on spotify. They have been consistently having podcasts every sunday night at 8PM for over 9 years which is outstanding dedication.
         <p>if you like listening to discussion on football and a occasional ramble about something random ( for the first 10 ins of the podcast typically) then I would highly recommend giving them a listen! It is a fan led podcast and has no affiliation to the club at all Some episodes include interviews as managers owners , chairman and players have been on the podcast before !</p>  
-        <p>If you are interested in joining the DN3D podcast give them a private message on their twitter <a href="https://x.com/DN35GTFC">Click Here!</a> Please note that uploads are less common in the football off season  Here is their  <a href="https://linktr.ee/dn35">linktree</a></p></p>
+        <p>If you are interested in joining the DN35 podcast give them a private message on their twitter <a href="https://x.com/DN35GTFC">Click Here!</a> Please note that uploads are less common in the football off season  Here is their  <a href="https://linktr.ee/dn35">linktree</a></p></p>
     </section>
 
     <section class="View-From-The-Findus">

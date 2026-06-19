@@ -6,7 +6,99 @@ body {
     color: black;
 }
 
-.nav-bar {
+nav {
+    /* background-color: #222121; */
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+.nav {
+    transition: all 0.4s ease-in-out;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.logo {
+    /* background-color: #060612; */
+    color: #D2D2D2;
+    font-size: 23px;
+}
+
+.header {
+    position: relative;
+    background-color: #222121;
+    border: 2px solid #F60000;
+    border-radius: 5px;
+    width: 100%;
+    top: 0;
+}
+
+.header_content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    min-height: 60px;
+}
+
+.nav_list {
+    display: flex;
+    column-gap: 40px;
+}
+
+.nav_link:hover,
+.nav_link:focus {
+    color: #F60000;
+}
+
+.nav_item {}
+
+.nav_link {
+    color: #D2D2D2;
+    font-size: 15px;
+    transition: all 0.4s;
+}
+
+.hamburger {
+    display: none;
+    /* Shows only on mobile */
+    cursor: pointer;
+}
+
+.bar {
+    height: 2px;
+    width: 27px;
+    background-color: #fff;
+    margin: 5px 0;
+    opacity: 0.8;
+    transition: all 0.4s ease-in-out;
+}
+
+.nav--open {
+    transform: translateX(0) !important;
+}
+
+.hamburger--open .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger--open .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger--open .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+
+/* .nav-bar {
     border-radius: 5px;
     border: 2px solid #F60000;
     background: #222121;
@@ -45,7 +137,7 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-}
+} */
 
 .title {
     margin-top: 5%;
@@ -200,6 +292,42 @@ a {
     color: black;
 }
 
-.accvalid{
+.accvalid {
     text-align: center;
+}
+
+@media (max-width: 650px) {
+    .header {
+        position: sticky;
+        z-index: 100;
+    }
+    .nav {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        background-color: #060612;
+        width: 100%;
+        padding: 10px 0 25px;
+        transform: translateX(-100%);
+    }
+    .nav_list {
+        flex-direction: column;
+        align-items: center;
+        row-gap: 100px;
+    }
+    .nav_link {
+        font-size: 18px;
+    }
+    .nav_link:hover,
+    .nav_link:focus {
+        color: #316E74;
+        text-decoration: underline;
+    }
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+    .logo {
+        font-size: 18px;
+    }
 }
