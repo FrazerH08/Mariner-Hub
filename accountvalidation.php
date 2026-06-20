@@ -13,7 +13,7 @@ include 'nav.php';
         @import url('https://fonts.googleapis.com/css2?family=Cambo&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
   </style>
     <script src="nav.js" defer></script>
-</head>>
+</head>
 <body>
     <?php
 // if form is submitted
@@ -58,7 +58,7 @@ if (strlen($password) < 8) {
 
         if($result->num_rows > 0){
             echo "<h1 class='title'>Email is already taken, please change email</h1><br>";
-            echo "<div class='accvalid'><a href='javascript:self.history.back()' class='content-creatorbtn'> Go Back</a></div>";
+            echo "<div class='accvalid'><a href='javascript:self.history.back()' class='btn'> Go Back</a></div>";
         } else {
             // Hash the password , incase it gets hacked, based on testscript file
             $hashed_password = password_hash($password, PASSWORD_DEFAULT);
@@ -69,7 +69,7 @@ if (strlen($password) < 8) {
 
             if($insert_stmt->execute()){
                 echo "<h1 class='title'>Registration was successful</h1><br>";
-                echo "<div class='accvalid'><a href='login.php' class='content-creatorbtn'>Login</a></div>";
+                echo "<div class='accvalid'><a href='login.php' class='btn'>Login</a></div>";
             } else {
                 echo "<h1 class='title'>Registration failed</h1><br>";
                 echo "Error: " . $insert_stmt->error;

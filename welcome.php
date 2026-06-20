@@ -25,13 +25,13 @@ $username = $_SESSION['username'] ?? 'Guest';
         @import url('https://fonts.googleapis.com/css2?family=Cambo&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
     </style>
     <script src="nav.js" defer></script>
-</head>>
+</head>
 <body>
 <h2>Hello <?php echo htmlspecialchars($username); ?>, Nice to see you! Welcome to the Mariner Hub </h2>
-<a class='content-creatorbtn' href="index.php">Go to the home page</a>
+<a class='btn' href="index.php">Go to the home page</a>
     <?php
     if($role === 'admin'){
-        echo " As You are an admin you can delete news, edit news and post articles , here is the links to do so " ?> <br> <a class='content-creatorbtn' href="admin_management.php">Admin Management</a><br> <?php
+        echo " As You are an admin you can delete news, edit news and post articles , here is the links to do so " ?> <br> <a class='btn' href="admin_management.php">Admin Management</a><br> <?php
     }?>
 </body>
 </html>

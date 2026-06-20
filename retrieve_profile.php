@@ -22,7 +22,7 @@ if($result->num_rows > 0) {
             <link rel="stylesheet" href="main.css">
             <link rel="stylesheet" href="accounts.css">
             <script src="nav.js" defer></script>
-</head>>
+</head>
         <body>
             <h1 class="title"><u>View Profile</u></h1>
             <?php

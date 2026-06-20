@@ -22,9 +22,9 @@ $username = $_SESSION['username'] ?? 'Guest';
         @import url('https://fonts.googleapis.com/css2?family=Cambo&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
   </style>
     <script src="nav.js" defer></script>
-</head>>
+</head>
 <body>
     <h2>Hello <?php echo htmlspecialchars($username); ?>, Nice to see you! Welcome to the Mariner Hub </h2>
-    <a class="content-creatorbtn" href="news_upload.php"> Create News</a>
+    <a class="btn" href="news_upload.php"> Create News</a>
 </body>
 </html>

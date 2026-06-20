@@ -83,6 +83,7 @@ a {
 
 .nav--open {
     transform: translateX(0) !important;
+    margin-top: 20px;
 }
 
 .hamburger--open .bar:nth-child(1) {
@@ -144,39 +145,11 @@ ul {
     text-align: center;
 }
 
-.welcome-paragrapth {
-    font-size: larger;
-    text-align: center;
-}
-
 .grid-container {
     text-align: center;
 }
 
-.main-content {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-gap: 10%;
-    margin-bottom: 3%;
-    align-items: start;
-}
-
-.latest-article {
-    grid-column: 1/2;
-    grid-row: span 2;
-}
-
-.smaller-article-image {
-    width: 70%;
-    height: auto;
-}
-
-.article-image {
-    width: 80%;
-    height: auto;
-}
-
-.content-creatorbtn {
+.btn {
     text-align: center;
     border: 2px solid #EE0A0E;
     padding: 10px 24px;
@@ -190,13 +163,9 @@ ul {
     transition-duration: 0.4s;
 }
 
-.content-creatorbtn:hover {
+.btn:hover {
     background-color: #EE0A0E;
     color: white;
-}
-
-.content-creators {
-    text-align: center;
 }
 
 .box {
@@ -297,6 +266,9 @@ a {
 }
 
 @media (max-width: 650px) {
+    body {
+        transition: background-color 0.4s ease-in-out;
+    }
     .header {
         position: sticky;
         z-index: 100;
@@ -305,18 +277,31 @@ a {
         position: fixed;
         top: 60px;
         left: 0;
-        background-color: #060612;
+        background-color: #222121;
+        height: calc(100vh - 60px);
+        /* fills everything below the header */
         width: 100%;
         padding: 10px 0 25px;
         transform: translateX(-100%);
+        /* border: 2px solid #F60000; */
+        /* border-top: none;
+        /* avoid doubling the header's bottom border */
+        border-radius: 2px 2px 5px;
+        box-sizing: border-box;
+    }
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
     }
     .nav_list {
         flex-direction: column;
         align-items: center;
-        row-gap: 100px;
+        row-gap: 45px;
+        column-gap: 0;
     }
     .nav_link {
-        font-size: 18px;
+        font-size: 16px;
     }
     .nav_link:hover,
     .nav_link:focus {
@@ -329,5 +314,13 @@ a {
     }
     .logo {
         font-size: 18px;
+    }
+    body.menu-open {
+        overflow: hidden;
+        background-color: #222121;
+    }
+    body.menu-open>*:not(.header) {
+        filter: blur(5px);
+        transition: filter 0.4s ease-in-out;
     }
 }

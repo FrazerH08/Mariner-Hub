@@ -14,13 +14,13 @@ include 'nav.php';
         @import url('https://fonts.googleapis.com/css2?family=Cambo&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
     </style>
     <script src="nav.js" defer></script>
-</head>>
+</head>
 <body>
     <h1 class="title"><u>Stats</u></h1>
     <div class="grid-container">
-        <a href="league_table.php"class="content-creatorbtn">League 2 table</a>
-        <a href="squad_stats.php" class="content-creatorbtn">Squad Stats</a>
-        <a href="fixtures&results.php" class="content-creatorbtn">Fixtures & Results</a>
+        <a href="league_table.php"class="btn">League 2 table</a>
+        <a href="squad_stats.php" class="btn">Squad Stats</a>
+        <a href="fixtures&results.php" class="btn">Fixtures & Results</a>
         <iframe id="sofa-standings-embed-84-61960" src="https://widgets.sofascore.com/embed/tournament/84/season/61960/standings/League%20Two?widgetTitle=League%20Two&showCompetitionLogo=true" style=height:1283px!important;max-width:768px!important;width:100%!important; frameborder="0" scrolling="yes"></iframe>
         <p class="stats-summary">
             <b><u>Top Scorer:</u></b>

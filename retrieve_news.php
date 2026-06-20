@@ -50,7 +50,7 @@ if (isset($_SESSION['user_id'])){
         </form>
     </section>';
 } else{
-    echo '<p>Please <a href="login.php" class="content-creatorbtn">Log In</a> to comment </p>';
+    echo '<p>Please <a href="login.php" class="btn">Log In</a> to comment </p>';
 }
 
 $commentQuery = "SELECT c.text, c.date_created, u.username 
@@ -89,7 +89,7 @@ $conn->close();
         @import url('https://fonts.googleapis.com/css2?family=Cambo&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
     </style>
     <script src="nav.js" defer></script>
-</head>>
+</head>
 <body>
 </div>
 </body>

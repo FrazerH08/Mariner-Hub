@@ -14,10 +14,10 @@ include 'nav.php';
         @import url('https://fonts.googleapis.com/css2?family=Cambo&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
     </style>
     <script src="nav.js" defer></script>
-</head>>
+</head>
 <body>
     <h1 class="title"><u>Club Records</u></h1>
-    <a class="content-creatorbtn"href="about_club.php">Go Back to about club</a>
+    <a class="btn"href="about_club.php">Go Back to about club</a>
     <p class="stats-summary">
         🏆 Highest League Finish: <br>
         5th place in the First Division (now the Premier League) - 1934-35 season <br>

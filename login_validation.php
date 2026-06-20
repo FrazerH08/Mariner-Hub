@@ -13,7 +13,7 @@ include 'nav.php';
         @import url('https://fonts.googleapis.com/css2?family=Cambo&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
     </style>
     <script src="nav.js" defer></script>
-</head>>
+</head>
 <body>
     <?php
     if(isset($_POST['submit'])){
@@ -50,7 +50,7 @@ include 'nav.php';
         exit();
     } else {
         echo "<h1 class='title'>Invalid username or password</h1>";
-        echo "<a class='content-creatorbtn' href='javascript:self.history.back()'> Go Back</a>";
+        echo "<a class='btn' href='javascript:self.history.back()'> Go Back</a>";
     }
 }
         ?>

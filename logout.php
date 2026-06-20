@@ -17,7 +17,7 @@ session_destroy();
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <script src="nav.js" defer></script>
     <script src="nav.js" defer></script>
-</head>>
+</head>
 <style>
     .logout-parent {
         display: flex;

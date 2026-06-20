@@ -14,11 +14,11 @@ include 'nav.php';
         @import url('https://fonts.googleapis.com/css2?family=Cambo&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
     </style>
     <script src="nav.js" defer></script>
-</head>>
+</head>
 <body>
     <h1 class="title"><u>Club History</u></h1>
-    <a class="content-creatorbtn"href="about_club.php">Go Back to about club</a>
-    <a class="content-creatorbtn"href="https://en.wikipedia.org/wiki/Grimsby_Town_F.C.">Read more on the history of the club</a>
+    <a class="btn"href="about_club.php">Go Back to about club</a>
+    <a class="btn"href="https://en.wikipedia.org/wiki/Grimsby_Town_F.C.">Read more on the history of the club</a>
     <p class="stats-summary">
         In 1878 Grimsby Town was formed after a meeting held at the Wellington arms public house on Freeman Street. Several members was from the Worsley Cricket Club who wanted to form a football team to occupy the winter as the cricket season had finished. <br>
         The Club was not called Grimsby Town originally it was called Grimsby Pelham. In 1880 the club purchased land at Clee park which was the clubs home ground until 1889 when they relocated to abbey Park. <br>

@@ -1,0 +1,49 @@
+.welcome-paragrapth {
+    font-size: larger;
+    text-align: center;
+}
+
+.main-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 10%;
+    margin-bottom: 3%;
+    align-items: start;
+}
+
+.latest-article {
+    grid-column: 1/2;
+    grid-row: span 2;
+}
+
+.smaller-article-image {
+    width: 70%;
+    height: auto;
+}
+
+.article-image {
+    width: 80%;
+    height: auto;
+}
+
+.content-creators {
+    margin: 0;
+    text-align: center;
+    /* margin-top: 100px; */
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        grid-template-columns: auto;
+    }
+    .latest-article {
+        grid-row: auto;
+        /* don't force a 2-row span in single-column layout */
+    }
+    .third-article {
+        z-index: 1;
+    }
+    .content-creators {
+        margin-top: 150px;
+    }
+}

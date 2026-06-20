@@ -14,11 +14,11 @@ include 'nav.php';
         @import url('https://fonts.googleapis.com/css2?family=Cambo&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
     </style>
     <script src="nav.js" defer></script>
-</head>>
+</head>
 <body>
     <h1 class="title"><u> Squad Stats</u></h1>
     <div class="content-creators">
-    <a class="content-creatorbtn" href="squad_stats.php">All Competions stats </a>
+    <a class="btn" href="squad_stats.php">All Competions stats </a>
     <h1><u>League Two Team Stats</u></h1>
     </div>
 <div class="grid-container">

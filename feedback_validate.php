@@ -24,7 +24,7 @@ if($stmt){
 }
 if($stmt->execute()) {
     echo "<h1 class='title'> Feedback Submitted! We will email you with the email you provided if we have any updates! </h1>";
-    echo "<a href='index.php' class='content-creatorbtn'>  Back to Home</a>";
+    echo "<a href='index.php' class='btn'>  Back to Home</a>";
 } else{
     echo  "Error: " . $sql ."<br>" . $conn->error;
 }
@@ -42,7 +42,7 @@ if($stmt->execute()) {
         @import url('https://fonts.googleapis.com/css2?family=Cambo&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
   </style>
     <script src="nav.js" defer></script>
-</head>>
+</head>
 <body>
     
 </body>

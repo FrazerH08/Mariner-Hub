@@ -14,12 +14,12 @@ include 'nav.php';
         @import url('https://fonts.googleapis.com/css2?family=Cambo&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
     </style>
     <script src="nav.js" defer></script>
-</head>>
+</head>
 <body>
     <h1 class="title"><u>How to purchase tickets</u></h1>
-    <a class="content-creatorbtn"href="about_club.php">Go Back to about club</a> <br>
+    <a class="btn"href="about_club.php">Go Back to about club</a> <br>
     <br>
-    <a class="content-creatorbtn"href="https://www.venuetoolbox.com/grimsby/ASP/bookTickets.asp?dept=Spectators">Purchase Tickets </a>
+    <a class="btn"href="https://www.venuetoolbox.com/grimsby/ASP/bookTickets.asp?dept=Spectators">Purchase Tickets </a>
     <p class="stats-summary">
      Here is a quick guide on how to purchase tickets for Grimsby Town Games <br>
     1. Click this link Grimsby Town FC Grimsby Town FC Ticket Ordering <br>

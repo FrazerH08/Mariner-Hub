@@ -13,11 +13,11 @@ include 'nav.php';
         @import url('https://fonts.googleapis.com/css2?family=Cambo&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
     </style>
     <script src="nav.js" defer></script>
-</head>>
+</head>
 <body>
     <h1 class="title"><u>Forum</u></h1>
     <h2> This page is not in  development right now , it is not available right now , sorry for any inconvenience caused.  </h2>
     <br>
-    <a class="content-creatorbtn"href="index.php">Go Back to Home</a>
+    <a class="btn"href="index.php">Go Back to Home</a>
 </body>
 </html>

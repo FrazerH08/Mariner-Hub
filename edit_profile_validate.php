@@ -31,7 +31,7 @@ $imageFileType =strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
         @import url('https://fonts.googleapis.com/css2?family=Cambo&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
     </style>
     <script src="nav.js" defer></script>
-</head>>
+</head>
 <body>
 <?php
 if(isset($_POST['submit'])) {

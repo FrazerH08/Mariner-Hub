@@ -17,6 +17,7 @@ $stmt = $conn->prepare("SELECT * FROM news ORDER BY time_created DESC");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="home.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Cambo&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
     </style>
@@ -53,11 +54,11 @@ $stmt = $conn->prepare("SELECT * FROM news ORDER BY time_created DESC");
         }
     }
     ?>
-</div>
+        </div>
 
     </div>
     <div class="content-creators">
-        <a href="content_creators.php" class="content-creatorbtn"> Grimsby Content Creators</a>
+        <a href="content_creators.php" class="btn"> Grimsby Content Creators</a>
     </div>
 </body>
 
