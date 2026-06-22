@@ -1,13 +1,91 @@
-section {
+.postCard2 {
+    padding: 25px 30px;
+    border-radius: 8px;
+    background-color: #f4f4f2;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-top: 3px solid #C8102E;
+    /* tone this red to whatever feels right, just less neon than F60000 */
+    color: #333333;
     text-align: left;
+    max-width: 1200px;
+    margin: 30px auto;
+    line-height: 1.9;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
-img {
-    margin-top: 5%;
-    width: auto;
-    height: 80%;
+.postCard2 img {
+    width: 90%;
+    max-width: 850px;
+    height: auto;
+    max-height: 800px;
+    object-fit: cover;
+    border: none;
+    border-radius: 6px;
+    margin: 0 auto 20px;
+    display: block;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.4s ease;
 }
 
-textarea {
-    font-size: 150%;
+
+/* .postCard2 img {
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 6px;
+    margin: 0 auto 20px;
+    display: block;
+    max-height: 800px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+    transition: transform 0.4s ease;
+} */
+
+.postCard2 img:hover {
+    transform: scale(1.02);
+}
+
+.postCard2 h1 {
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+.comment-btn {
+    width: 20%;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #c9c9c9;
+    border-radius: 4px;
+    font-size: 18px;
+    transition: border-color 0.3s, color 0.3s;
+}
+
+.comment-btn:hover {
+    border-color: #C8102E;
+    color: #ffffff;
+}
+
+@media (max-width: 650px) {
+    .postCard2 {
+        margin-left: 20px;
+        margin-right: 20px;
+        padding: 18px;
+    }
+    .comment-btn {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    h1 {
+        font-size: 26px;
+    }
+    p {
+        font-size: 15px;
+        line-height: 2.1;
+    }
+    .read-more-btn,
+    .btn {
+        text-align: center;
+        /* padding: 5px 12px; */
+        justify-content: center;
+    }
 }
