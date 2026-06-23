@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="home.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cambo&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+        .other-projects li a {
+            text-decoration: underline;
+            transition: 0.4s all;
+            font-size: 20px;
+        }
+        
+        .other-projects li a:hover {
+            color: #F60000;
+        }
+        
+        .other-projects {
+            margin-bottom: 100px;
+        }
+        
+        @media (max-width: 768px) {
+            .other-projects-wrapper {
+                margin-left: 20px;
+                margin-right: 20px;
+            }
+        }
+    </style>
+    <script src="../nav.js" defer></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header_content">
+            <a href="../index.php" class="logo"><b>Mariner Hub</b></a>
+            <nav class="nav">
+                <ul class="nav_list">
+                    <li class="nav_item"> <a href="../list_news.php" class="nav_link">News</a></li>
+                    <li class="nav_item"> <a href="../forum.php" class="nav_link">Forum</a></li>
+                    <li class="nav_item"> <a href="../stats.php" class="nav_link">Stats</a></li>
+                    <li class="nav_item"> <a href="../about_club.php" class="nav_link">About Club</a></li>
+                    <li class="nav_item"> <a href="../fixtures&results.php" class="nav_link">Fixtures & Results</a></li>
+                    <li class="nav_item" id="login"> <a href="../login.php" class="nav_link">Login</a></li>
+                    <li class="nav_item"> <a href="../signup.php" class="nav_link">Sign up</a></li>
+                    <li class="nav_item"> <a href="../retrieve_profile.php" class="nav_link">View Account</a></li>
+                    <li class="nav_item"> <a href="../feedback.php" class="nav_link">Feedback</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+        <script src="nav.js" defer></script>
+    </header>
+    <div class="move-right" style="margin-left: 20px;">
+        <h1>Welcome to Frazer H's Personal Webpage</h1>
+        <p>Here are some of my projects:</p>
+    </div>
+    <div class="other-projects-wrapper">
+        <ul class="other-projects" style="list-style: decimal;">
+            <li><a href="https://ercstudentwebserver.co.uk/students/frazerh/Citizens_Road_to_Survival/">Citizens' Road to Survival</a></li>
+            <p> Citizens' Road to Survival is a student project created by a student who is passionate about web development and this is their final major project. This websites raises awareness of what we cannot afford to let the world become. </p>
+            <p>The website which features news articles, survival tips, and a dashboard for tracking important updates. Makes this a close experience for our users. </p>
+            <li><a href="https://ercstudentwebserver.co.uk/students/frazerh/Managers-Lounge/">Managers' Lounge</a></li>
+            <p> Managers Lounge is a website for Football Manager players , new and expeirenced with accsess to guides , discussion boards and news.</p>
+            <li><a href="../index.php">Mariner Hub</a></li>
+            <p> Mariner Hub ” is a modern website which has everything a Grimsby Fan needs, from articles stats , <br> fixtures and results and a forum to discuss all things about Grimsby! As a community of Grimsby Town fans <br> you will be able to interact
+                like never before.</p>
+        </ul>
+    </div>
+    <footer>
+        <div class="f-container">
+            <div class="footer-content">
+                <h3>Contact Us</h3>
+                <p>Email: citizensroadtosurvival@gmail.com</p>
+            </div>
+            <div class="footer-content">
+                <h3> Quick links</h3>
+                <ul class="f-list">
+                    <li><a href="../index.php">Home</a></li>
+                    <li><a href="../list_news.php">News</a></li>
+                    <li><a href="../forum.php">Forum</a></li>
+                    <li><a href="../about_club.php">About Club</a></li>
+                    <li><a href="../dashboard.php">Dashboard</a></li>
+                    <li><a href="../feedback.php">Feedback</a></li>
+                </ul>
+            </div>
+            <div class="footer-content">
+                <h3>Follow Us</h3>
+                <ul class="social-icons">
+                    <li><a href="https://x.com/Citizens_RoadTS"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="https://www.instagram.com/citizensroadtosurvival/"><i class="fab fa-instagram"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="bottom-bar">
+            <p>This is a student website , with some further additions after the course as I am extremely passionate about the club!</p>
+            <p><a class="other-projects-link" href="#">My other websites</a> (Ignore The Mariner Hub link on there as it is outdated)</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

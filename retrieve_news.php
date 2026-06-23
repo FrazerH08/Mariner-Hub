@@ -74,7 +74,7 @@ while ($comment = $commentResult->fetch_assoc()) {
     echo "<div class='comment-box'>";
     echo "<strong>" . htmlspecialchars($comment['username']) . "</strong><br>";
     echo "<p>" . nl2br(htmlspecialchars($comment['text'])) . "</p>";
-    echo "<small>" . $comment['date_created'] . "</small>";
+    echo "<p>". date("F j, Y, g:i a", strtotime($comment['date_created'])) . "</p>";
     echo "</div><hr>";
 }
 echo '</section>';
@@ -125,7 +125,7 @@ $conn->close();
         </div>
         <div class="bottom-bar">
             <p>This is a student website , with some further additions after the course as I am extremely passionate about the club!</p>
-            <p><a class="other-projects-link" href="https://ercstudentwebserver.co.uk/students/frazerh/">My other websites</a> (Ignore The Mariner Hub link on there as it is outdated)</p>
+            <p><a class="other-projects-link" href="other-projects\index.html">My other websites</a> (Ignore The Mariner Hub link on there as it is outdated)</p>
         </div>
     </footer>
 

@@ -108,7 +108,7 @@ if (mysqli_query($conn, $sql)) {
         </div>
         <div class="bottom-bar">
             <p>This is a student website , with some further additions after the course as I am extremely passionate about the club!</p>
-            <p><a class="other-projects-link" href="https://ercstudentwebserver.co.uk/students/frazerh/">My other websites</a> (Ignore The Mariner Hub link on there as it is outdated)</p>
+            <p><a class="other-projects-link" href="other-projects\index.html">My other websites</a> (Ignore The Mariner Hub link on there as it is outdated)</p>
         </div>
     </footer>
 

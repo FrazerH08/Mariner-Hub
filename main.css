@@ -420,6 +420,10 @@ img {
     text-align: center;
 }
 
+.comment-form {
+    width: 20%;
+}
+
 @media (max-width: 900px) {
     body {
         transition: background-color 0.4s ease-in-out;
@@ -495,5 +499,8 @@ img {
     iframe {
         max-width: 100%;
         height: auto;
+    }
+    .comment-form {
+        width: 100%;
     }
 }

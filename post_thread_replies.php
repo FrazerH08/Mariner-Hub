@@ -1,5 +1,6 @@
 <?php
-include 'nav.php';   
+include 'nav.php';
+include 'connectdb.php';
 ?>
 
 <!DOCTYPE html>
@@ -7,45 +8,31 @@ include 'nav.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Club</title>
+    <title>Home</title>
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="stats.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Cambo&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
     </style>
     <script src="nav.js" defer></script>
 </head>
 <body>
-    <h1 class="title"><u>About Club</u></h1>
-    <br>
-    <div class="grid-container">
-        <a class="btn"href="purchase_tickets.php">How To Buy Tickets</a>
-        <a class="btn"href="club_history.php">History </a>
-        <a class="btn"href="club_records.php">Club Records </a>
-    </div>
-    <p class="general-info">
-Grimsby Town Football Club, nicknamed "The Mariners," is a professional football team based in Grimsby, North East Lincolnshire, England. <br> Founded in 1878, the club has a long and proud history, including several spells in the top two tiers of English football, especially during the early to mid-20th century. <br> They play their home games at Blundell Park, which has been their home since 1899. Known for their passionate fan base, Grimsby Town currently compete in the lower divisions of the English Football League and are recognized for their resilience and community spirit.
-</p><br> <br> 
-<p class="general-info">
-Rivals: <br>
-Scunthorpe United , Hull City, Lincoln , Doncaster 
-<br> <br>
-Stadium Capacity: <br>
-9,032 
-<br> <br>
-League Position: <br>
-8th Sky Bet League Two 24/25 
-<br> <br>
-Chairman: <br>
-Andrew Pettit 
-<br> <br>
-Head Coach: <br>
-David Artell 
-<br> <br>
-Assistant Manager: <br>
-Shaun Pearson
-</p>
+    
+    <?php
+    $user_id = $_SESSION['user_id'];
+    $thread_id = $_POST['thread_id'];
+    $text = $_POST['text'];
+
+    $sql = "INSERT INTO threads_replies (user_id, thread_id , text) VALUES (?,?,?)";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("iis", $user_id , $thread_id, $text);
+     if ($stmt->execute()) {
+        header("Location: retrieve_thread.php?id=" . $thread_id); // redirect back to the thread
+        exit();
+    } else {
+        echo "Error: " . $stmt->error;
+    }
+    ?>
 <footer>
         <div class="f-container">
             <div class="footer-content">
@@ -76,6 +63,5 @@ Shaun Pearson
             <p><a class="other-projects-link" href="other-projects\index.html">My other websites</a> (Ignore The Mariner Hub link on there as it is outdated)</p>
         </div>
     </footer>
-
 </body>
 </html>

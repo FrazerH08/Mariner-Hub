@@ -52,18 +52,12 @@ if (empty($news)) {
 <br>
 <?php
 if($role === 'admin'){
-    echo '<a href="news_upload.php" class="btn">Create Article</a>'; 
+    echo '<a href="news_upload.php" style="margin-left: 10px; margin-bottom:10px" class="btn">Create Article</a>'; 
 }
 ?>
-<br> <br>
-<a class="rumoursbtn" href="latest_rumours.php">Latest GTFC Rumours</a> <br>
-<br>
-    <div class="refresh">
-        <a> <a href="list_news.php"> Click here to refresh articles</a></a>
-    </div>
     <div class="search-button">
         <form method='POST'>
-            <input type="text" placeholder="Search for a article or author" name="search">
+            <input type="text" class="search-btn" placeholder="Search for an article/author" name="search">
             <button name="submit">Search</button>
         </form>
     </div>
@@ -88,7 +82,7 @@ if($role === 'admin'){
 
                 // echo '<p>Description: ' . htmlspecialchars($row['description']) . '</p>';
                 if (htmlspecialchars($row['username']) == null) {
-                    echo '<p>Created By: <a class="user-n-f"> 404: User Not Found</a></p>';
+                    echo '<p>Created By: <a class="user-n-f"> Deleted User</a></p>';
                 } else {
                     echo '<p>Created By: ' . htmlspecialchars($row['username']) . '</p>';
                     }
@@ -129,7 +123,7 @@ if($role === 'admin'){
         </div>
         <div class="bottom-bar">
             <p>This is a student website , with some further additions after the course as I am extremely passionate about the club!</p>
-            <p><a class="other-projects-link" href="https://ercstudentwebserver.co.uk/students/frazerh/">My other websites</a> (Ignore The Mariner Hub link on there as it is outdated)</p>
+            <p><a class="other-projects-link" href="other-projects\index.html">My other websites</a> (Ignore The Mariner Hub link on there as it is outdated)</p>
         </div>
     </footer>
 

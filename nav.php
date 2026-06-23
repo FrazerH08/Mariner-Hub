@@ -11,7 +11,7 @@ $user_id = $_SESSION['user_id'] ?? null;
 
 <header class="header">
         <div class="header_content">
-            <a href="index.php" class="logo">Mariner Hub</b></a>
+            <a href="index.php" class="logo"><b>Mariner Hub</b></a>
             <nav class="nav">
                 <ul class="nav_list">
                     <li class="nav_item"> <a href="list_news.php" class="nav_link">News</a></li>
