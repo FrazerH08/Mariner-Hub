@@ -10,7 +10,12 @@ if(isset($_POST['submit'])){
     $search = $_POST['search'];
     
     // Prepared statement for safer search
-    $stmt = $conn->prepare("SELECT * FROM threads WHERE title LIKE ? ORDER BY time_created DESC");
+    // joins users on threads.user_id so we get a stable id for profile links
+    $stmt = $conn->prepare("SELECT threads.*, users.id AS user_id, users.username AS author_username
+                             FROM threads
+                             LEFT JOIN users ON threads.user_id = users.id
+                             WHERE threads.title LIKE ?
+                             ORDER BY threads.time_created DESC");
     $searchTerm = "%$search%"; 
     $stmt->bind_param("s", $searchTerm);
     $stmt->execute();
@@ -23,7 +28,10 @@ if(isset($_POST['submit'])){
 
 // If no search was successfully performed, fetch all articles
 if (empty($threads)) {
-    $stmt = $conn->prepare("SELECT * FROM threads ORDER BY time_created DESC");
+    $stmt = $conn->prepare("SELECT threads.*, users.id AS user_id, users.username AS author_username
+                             FROM threads
+                             LEFT JOIN users ON threads.user_id = users.id
+                             ORDER BY threads.time_created DESC");
     $stmt->execute();
     $result = $stmt->get_result();
     
@@ -54,7 +62,6 @@ if (empty($threads)) {
     <h1 class="title"><u>Forum</u></h1>
     <div class="move-right" style="margin-left: 10px;">
         <a class="btn" href="latest_rumours.php">Latest GTFC Rumours</a> <br>
-        <p>To view latest rumours click the button!</p>
     </div>
 
     <?php
@@ -87,7 +94,13 @@ if ($logged_in) {
                 }
 
                 echo '<p>Description: ' . htmlspecialchars($row['description']) . '</p>';
-                echo '<p>Created By: ' . htmlspecialchars($row['username']) . '</p>';
+
+                if (empty($row['user_id']) || empty($row['author_username'])) {
+                    echo '<p>Created By: <a class="user-n-f">Deleted User</a></p>';
+                } else {
+                    echo '<p>Created By: <a class="retrieve-user-link" href="retrieve_profile.php?id=' . htmlspecialchars($row['user_id']) . '">' . htmlspecialchars($row['author_username']) . '</a></p>';
+                }
+
                 echo '<p>Date: ' . date("F j, Y, g:i a", strtotime($row['time_created'])) . '</p>';
                 echo '</section>';
             }
@@ -123,7 +136,7 @@ if ($logged_in) {
         </div>
         <div class="bottom-bar">
             <p>This is a student website , with some further additions after the course as I am extremely passionate about the club!</p>
-            <p><a class="other-projects-link" href="other-projects\index.html">My other websites</a> (Ignore The Mariner Hub link on there as it is outdated)</p>
+            <p><a class="other-projects-link" href="other-projects\index.html">My other websites/projects </a></p>
         </div>
     </footer>
 

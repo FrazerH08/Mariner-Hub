@@ -82,6 +82,8 @@
     text-align: center;
     align-items: center;
     margin: 0;
+    margin-left: 10px;
+    margin-right: 10px;
     /* let gap on the grid handle spacing */
     font-size: larger;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
@@ -115,6 +117,7 @@
 
 .article-title:hover {
     text-decoration: underline;
+    color: #EE0A0E;
     transition: .4s;
 }
 
@@ -145,6 +148,15 @@
 .welcome-message {
     margin-top: 0px;
     font-size: larger;
+}
+
+.retrieve-user-link {
+    text-decoration: underline;
+}
+
+.retrieve-user-link:hover {
+    color: #EE0A0E;
+    transition: .4s;
 }
 
 @media (min-width: 700px) {
