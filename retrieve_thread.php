@@ -67,6 +67,50 @@ include 'nav.php';
         .comment-actions .delete-btn:hover {
             color: #C8102E;
         }
+        .reply-toggle-btn {
+            background: none;
+            border: none;
+            color: #C8102E;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        .replies {
+            margin-left: 40px;
+            margin-top: 12px;
+        }
+        .reply-box {
+            background-color: #ececea;
+        }
+        .reply-form {
+            margin-top: 12px;
+        }
+        .reply-form textarea {
+            width: 100%;
+            min-height: 90px;
+            padding: 14px 18px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 15px;
+            line-height: 1.6;
+            resize: vertical;
+        }
+        .reply-form button {
+            margin-top: 8px;
+            padding: 6px 18px;
+            background-color: transparent;
+            border: 1px solid #C8102E;
+            border-radius: 4px;
+            color: #C8102E;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        .reply-form button:hover {
+            background-color: #C8102E;
+            color: #ffffff;
+        }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <script src="nav.js" defer></script>
@@ -136,11 +180,13 @@ if (isset($_SESSION['user_id'])){
         </form>
     </section>';
 } else{
-    echo '<p class="login-prompt">Please <a href="login.php">Log In</a> to comment</p>';
+    echo '<p>Please <a href="login.php" class="btn">Log In</a> to comment </p>';
 }
 
 // hidden = 0 filters out replies that have crossed the report threshold
-$commentQuery = "SELECT t.id, t.text, t.date_created, t.user_id AS reply_user_id, u.username,
+// This fetches BOTH top-level replies and their single-level nested replies in one go;
+// they get separated into a tree structure in PHP below
+$commentQuery = "SELECT t.id, t.text, t.date_created, t.user_id AS reply_user_id, t.parent_id, u.username,
         COALESCE(SUM(CASE WHEN r.type = 'like' THEN 1 ELSE 0 END), 0) AS likes,
         COALESCE(SUM(CASE WHEN r.type = 'dislike' THEN 1 ELSE 0 END), 0) AS dislikes,
         MAX(CASE WHEN r.user_id = ? THEN r.type ELSE NULL END) AS my_vote
@@ -148,21 +194,31 @@ $commentQuery = "SELECT t.id, t.text, t.date_created, t.user_id AS reply_user_id
     JOIN users u ON t.user_id = u.id
     LEFT JOIN reactions r ON r.content_type = 'thread_reply' AND r.content_id = t.id
     WHERE t.thread_id = ? AND t.hidden = 0
-    GROUP BY t.id, t.text, t.date_created, t.user_id, u.username
+    GROUP BY t.id, t.text, t.date_created, t.user_id, t.parent_id, u.username
     ORDER BY t.date_created ASC";
 $commentStmt = $conn->prepare($commentQuery);
 $commentStmt->bind_param("ii", $current_user_id, $thread_id);
 $commentStmt->execute();
 $commentResult = $commentStmt->get_result();
 
-echo '<section class="comments">';
-echo '<h3>Comments:</h3>';
+// Split the flat result set into top-level replies and a lookup of nested replies by parent id
+$topLevelReplies = [];
+$repliesByParent = [];
 while ($comment = $commentResult->fetch_assoc()) {
+    if ($comment['parent_id'] === null) {
+        $topLevelReplies[] = $comment;
+    } else {
+        $repliesByParent[$comment['parent_id']][] = $comment;
+    }
+}
+
+function renderThreadReplyBox($comment, $thread_id, $isReply = false) {
     $likeActive = $comment['my_vote'] === 'like' ? ' active' : '';
     $dislikeActive = $comment['my_vote'] === 'dislike' ? ' active' : '';
     $isOwner = isset($_SESSION['user_id']) && $_SESSION['user_id'] == $comment['reply_user_id'];
+    $boxClass = $isReply ? 'comment-box reply-box' : 'comment-box';
 
-    echo "<div class='comment-box'>";
+    echo "<div class='" . $boxClass . "' id='comment-" . htmlspecialchars($comment['id']) . "'>";
 
     if (isset($_SESSION['user_id'])) {
         echo '<div class="comment-actions">';
@@ -183,12 +239,41 @@ while ($comment = $commentResult->fetch_assoc()) {
         echo '<div class="reactions">';
         echo '<button class="react-btn like-btn' . $likeActive . '" data-content-type="thread_reply" data-content-id="' . htmlspecialchars($comment['id']) . '" data-type="like">👍 <span class="like-count">' . htmlspecialchars($comment['likes']) . '</span></button>';
         echo '<button class="react-btn dislike-btn' . $dislikeActive . '" data-content-type="thread_reply" data-content-id="' . htmlspecialchars($comment['id']) . '" data-type="dislike">👎 <span class="dislike-count">' . htmlspecialchars($comment['dislikes']) . '</span></button>';
+        if (!$isReply) {
+            echo ' <button class="reply-toggle-btn" data-target="reply-form-' . htmlspecialchars($comment['id']) . '">Reply</button>';
+        }
         echo '</div>';
     } else {
         echo '<div class="reactions">👍 ' . htmlspecialchars($comment['likes']) . ' &nbsp; 👎 ' . htmlspecialchars($comment['dislikes']) . '</div>';
     }
 
-    echo "</div><hr>";
+    // Reply form only on top-level replies, since replies can't themselves be replied to
+    if (!$isReply && isset($_SESSION['user_id'])) {
+        echo '<form method="POST" action="post_thread_reply_reply.php" class="reply-form" id="reply-form-' . htmlspecialchars($comment['id']) . '" style="display:none;">';
+        echo '<textarea name="text" placeholder="Write a reply..." required></textarea><br>';
+        echo '<input type="hidden" name="thread_id" value="' . htmlspecialchars($thread_id) . '">';
+        echo '<input type="hidden" name="parent_id" value="' . htmlspecialchars($comment['id']) . '">';
+        echo '<button type="submit">Post Reply</button>';
+        echo '</form>';
+    }
+
+    echo '</div>';
+}
+
+echo '<section class="comments">';
+echo '<h3>Comments:</h3>';
+foreach ($topLevelReplies as $comment) {
+    renderThreadReplyBox($comment, $thread_id, false);
+
+    if (!empty($repliesByParent[$comment['id']])) {
+        echo '<div class="replies">';
+        foreach ($repliesByParent[$comment['id']] as $reply) {
+            renderThreadReplyBox($reply, $thread_id, true);
+        }
+        echo '</div>';
+    }
+
+    echo '<hr>';
 }
 echo '</section>';
 $stmt->close();
